@@ -67,7 +67,11 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="403" alt="image" src="https://github.com/user-attachments/assets/492ef31e-c7d9-44c8-8c0b-036b24101b84" />
 
-- 
+- Kemudian, langsung pilih done pada **Proxy Configuration**.
+- lalu, klik done pada **Ubuntu Archive Mirror Configuration**.
+- Pada **Storage Configuration**, kita pilih custom storage layout. lalu done.
+
+  <img width="401" alt="image" src="https://github.com/user-attachments/assets/4d8d975e-ad35-4901-8c5b-4f206f49d6c6" />
 
   
   
