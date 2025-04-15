@@ -16,5 +16,6 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
 - Kemudian, klik New untuk membuat Virtual Machine baru
 - Lalu, beri nama untuk virtual machine dan pilih Os Image yang ingin di install pada VM di sini kita gunakan Ubuntu Server. Janggan lupa centang pada pilihan Skip Unattended Installation agar tidak dibuatkan host otomatis.
+  
   <img width="567" alt="image" src="https://github.com/user-attachments/assets/0b1d5a18-6627-4d90-a833-f17d5e1bf1b2" />
 
