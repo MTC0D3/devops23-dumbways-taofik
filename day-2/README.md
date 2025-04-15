@@ -33,5 +33,33 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
    <img width="959" alt="image" src="https://github.com/user-attachments/assets/db02400c-29b1-49ef-8c83-10002c60da5c" />
 
-- 
+- Pilih Try or Install Ubuntu Server.
+
+   <img width="362" alt="image" src="https://github.com/user-attachments/assets/9eb80b95-4163-4e02-9ce7-5813b8648d1d" />
+
+- Pilih bahasa yang ingin digunakan.
+
+  <img width="404" alt="image" src="https://github.com/user-attachments/assets/1e60e564-1868-4fbd-95ff-fbfa47b5750e" />
+
+- Pilih Continue without updating.
+
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/ff96017a-7ab7-4d77-b95a-31de219ca278" />
+
+- Langsung tekan done jika tidak ada perubahan pada keyboard configuration.
+  
+  <img width="398" alt="image" src="https://github.com/user-attachments/assets/285c5016-a9b1-4e1f-a646-f71e5f0bc456" />
+
+- Lalu pilih ubuntu server untuk tipe installasi.
+
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/a5ebe7c5-e844-4243-8383-08e1c0f6d25c" />
+
+- Selanjutnya, kita masuk pada proses network configuration. Kita pilih edit IPV4 dan gunakan metode manual.
+
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/8ba29bde-587d-4ff2-8772-8e271369fb55" />
+
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/7a5c38e4-d0ad-4ee8-bcc8-41c8ae2f24a0" />
+
+
+
+
 
