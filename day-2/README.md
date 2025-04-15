@@ -106,7 +106,12 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="400" alt="image" src="https://github.com/user-attachments/assets/e92f0200-7acc-4df9-a4d4-462a98d2a37c" />
 
-  
+- Jika mengalami error untuk jaringan internet maka kita lakukan perubahan di VirtualBox. Masuk ke Setting lalu pilih Network pada Adapter kita pilih Bridged Adapter.
+
+  <img width="572" alt="image" src="https://github.com/user-attachments/assets/0f617a3e-1c9e-46f4-8904-1c9b16ba5c61" />
+
+- 
+
 
 
 
