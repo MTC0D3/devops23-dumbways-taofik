@@ -115,7 +115,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/449f2bcc-744d-47a2-9233-5177a0c47858" />
 
 
-
+## 🌐 Installasi Nginx Web Server
 
 
 
