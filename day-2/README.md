@@ -11,15 +11,21 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 - **Continuous Deployment (CD)** pada hakikatnya adalah proses yang “serupa tapi tak sama”. Perbedaannya, continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
 
 ## 🖥️ Virtual Machine Setup 
-- Pertama kita perlu memiliki dan menjalankan VirtualBox
+- Pertama kita perlu memiliki dan menjalankan VirtualBox.
   
   <img width="954" alt="image" src="https://github.com/user-attachments/assets/4aa8d262-f93b-42de-8842-24a9feab24a4" />
 
-- Kemudian, klik New untuk membuat Virtual Machine baru
+- Kemudian, klik New untuk membuat Virtual Machine baru.
 - Lalu, beri nama untuk virtual machine dan pilih Os Image yang ingin di install pada VM di sini kita gunakan Ubuntu Server. Janggan lupa centang pada pilihan Skip Unattended Installation agar tidak dibuatkan host otomatis.
   
   <img width="567" alt="image" src="https://github.com/user-attachments/assets/0b1d5a18-6627-4d90-a833-f17d5e1bf1b2" />
 
-- Klik pada hardware lalu konfigurasi untuk memory dan core processor. saya atur memory di 2GB dan processor di 2 core.
+- Klik pada Hardware lalu konfigurasi untuk memory dan core processor. saya atur memory di 2GB dan processor di 2 core.
 
   <img width="567" alt="image" src="https://github.com/user-attachments/assets/7e573e17-ff8b-4f0c-9b09-01bcda544d80" />
+
+- Klik pada Hard Disk lalu konfigurasi untuk membuat Virtual Hard Disk. saya atur di 10GB.
+
+  <img width="569" alt="image" src="https://github.com/user-attachments/assets/63be9ef7-c9ad-4964-8019-4c4fdea75627" />
+
+- Lalu klik Finish.
