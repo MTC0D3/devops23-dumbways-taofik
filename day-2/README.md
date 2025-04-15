@@ -1,4 +1,4 @@
-<img width="402" alt="image" src="https://github.com/user-attachments/assets/0f8b8bc8-6a88-4254-943e-a8b8739c7f2a" /># 📘 DevOps Task - Day 2
+# 📘 DevOps Task - Day 2
 ## 🔍 Apa itu DevOps ?
 DevOps adalah penghubung antara tim development dan operations agar mempercepat proses development hingga rilis ke publik.
 
