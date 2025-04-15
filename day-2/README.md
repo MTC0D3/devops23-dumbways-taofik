@@ -116,7 +116,13 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
 
 ## 🌐 Installasi Nginx Web Server
-
+- Pertama, jalankan perintah `sudo apt-get -y update` untuk memperbarui repository.
+- kedua, jalankan perintah `sudo apt-get -y install nginx` untuk memasang paket nginx.
+- Ketiga, cek status nginx sudah berjalan atau tidak dengan perintah `sudo systemctl status nginx`.
+- Kemudian, jika nginx belum berjalan gunakan perintah `sudo systemctl start nginx` atau `sudo systemctl enable nginx`  kalau ingin nginx berjalan otomatis setiap kali server di restart.
+- Lalu, uji coba di browser dengan menggunakan ip address masing-masing, bisa di cek dengan perintah `ip a`.
+  
+  <img width="959" alt="image" src="https://github.com/user-attachments/assets/1b782621-e8ab-4219-8265-3ad15faf2119" />
 
 
   
