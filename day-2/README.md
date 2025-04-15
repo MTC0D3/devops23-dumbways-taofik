@@ -28,4 +28,10 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="569" alt="image" src="https://github.com/user-attachments/assets/63be9ef7-c9ad-4964-8019-4c4fdea75627" />
 
-- Lalu klik Finish.
+- Lalu, klik Finish.
+- Selanjutnya, klik start pada VM yang sudah kita buat untuk melanjutkan ke proses installasi Ubuntu Server.
+
+   <img width="959" alt="image" src="https://github.com/user-attachments/assets/db02400c-29b1-49ef-8c83-10002c60da5c" />
+
+- 
+
