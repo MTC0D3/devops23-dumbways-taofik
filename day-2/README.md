@@ -110,7 +110,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="572" alt="image" src="https://github.com/user-attachments/assets/0f617a3e-1c9e-46f4-8904-1c9b16ba5c61" />
 
-- Lakukan uji coba jaringan seperti berikut. Selesai.
+- Lakukan uji coba jaringan seperti berikut, Selesai.
 
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/449f2bcc-744d-47a2-9233-5177a0c47858" />
 
