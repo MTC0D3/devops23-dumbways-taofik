@@ -102,7 +102,12 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="400" alt="image" src="https://github.com/user-attachments/assets/ab7f310e-466e-468f-91bc-98fc52f1f86c" />
 
-- 
+- Setelah itu, kita masukan username dan password host yang telah kita buat.
+
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/e92f0200-7acc-4df9-a4d4-462a98d2a37c" />
+
+  
+
 
 
 
