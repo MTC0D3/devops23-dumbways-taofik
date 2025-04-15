@@ -1,4 +1,4 @@
-# 📘 DevOps Task - Day 2
+<img width="402" alt="image" src="https://github.com/user-attachments/assets/0f8b8bc8-6a88-4254-943e-a8b8739c7f2a" /># 📘 DevOps Task - Day 2
 ## 🔍 Apa itu DevOps ?
 DevOps adalah penghubung antara tim development dan operations agar mempercepat proses development hingga rilis ke publik.
 
@@ -72,6 +72,23 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 - Pada **Storage Configuration**, kita pilih custom storage layout, lalu done.
 
   <img width="401" alt="image" src="https://github.com/user-attachments/assets/4d8d975e-ad35-4901-8c5b-4f206f49d6c6" />
+
+- Lalu, kita diarahkan ke proses **Storage Configuration ** lebih lanjut.
+- Kemudian, kita pilih free space dan tambah GPT partition.
+
+  <img width="399" alt="image" src="https://github.com/user-attachments/assets/db1a2e7b-5ceb-4e6e-a9ab-dd29a3ba7dbf" />
+
+- Lalu, buat partisi untuk sekitar 7GB dengan format ext4 yang dapat digunakan untuk bermacam-macam kebutuhan contohnya installasi aplikasi. Lalu, klik create.
+
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/79314003-3e31-497f-aeb9-9b68be2336dd" />
+
+- Kemudian, sisa kapasitas kita akan gunakan untuk swap atau virtual memory. lalu pilih create.
+
+  <img width="402" alt="image" src="https://github.com/user-attachments/assets/afb8c199-39e2-483c-a3e8-88a430f4ca81" />
+
+  
+
+  
 
   
   
