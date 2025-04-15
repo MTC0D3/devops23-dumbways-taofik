@@ -98,7 +98,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 - Kemudian, langsung klik done pada **SSH Configuration**.
 - Lalu, langsung klik done pada **Featured server snaps**.
 - Tunggu proses installasi sampai selesai.
-- kemudian, pilih reboot now.
+- Kemudian, pilih reboot now.
 
   <img width="400" alt="image" src="https://github.com/user-attachments/assets/ab7f310e-466e-468f-91bc-98fc52f1f86c" />
 
