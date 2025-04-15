@@ -12,3 +12,4 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
 ## 🖥️ Virtual Machine Setup 
 - Pertama kita perlu memiliki dan menjalankan VirtualBox
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/d3606f21-3da2-40ec-bd0b-ad623eea004e" />
