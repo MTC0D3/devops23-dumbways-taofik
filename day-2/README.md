@@ -8,6 +8,6 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
 - **Continuous delivery (CD)** adalah praktik pada proses pengembangan aplikasi di mana perubahan kode (code changes) secara otomatiss dipersiapkan sebelum nantinya dikirim ke lingkungan production.
 
-- **Continuous Deployment** pada hakikatnya adalah proses yang “serupa tapi tak sama”. Perbedaannya, continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
+- **Continuous Deployment (CD)** pada hakikatnya adalah proses yang “serupa tapi tak sama”. Perbedaannya, continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
 
 ## 🖥️ Virtual Machine Setup 
