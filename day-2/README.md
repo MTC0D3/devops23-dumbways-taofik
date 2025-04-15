@@ -59,7 +59,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="400" alt="image" src="https://github.com/user-attachments/assets/7a5c38e4-d0ad-4ee8-bcc8-41c8ae2f24a0" />
 
-
+- Kemudian buka cmd dan ketikan perintah `ipconfig`
 
 
 
