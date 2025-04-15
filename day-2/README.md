@@ -11,3 +11,4 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 - **Continuous Deployment (CD)** pada hakikatnya adalah proses yang “serupa tapi tak sama”. Perbedaannya, continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
 
 ## 🖥️ Virtual Machine Setup 
+- Pertama kita perlu memiliki dan menjalankan VirtualBox
