@@ -86,6 +86,21 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/afb8c199-39e2-483c-a3e8-88a430f4ca81" />
 
+- Lalu, klik done. Jika ada plihan destructive action pilih continue karena kita melakukan installasi awal dan data masih kosong.  
+
+  <img width="401" alt="image" src="https://github.com/user-attachments/assets/74320f91-7835-44fd-bd07-3fce4084ee1a" />
+
+- Kemudian, pada **Profile Configuration** kita masukan data sesuai yang kita inginkan.
+
+  <img width="399" alt="image" src="https://github.com/user-attachments/assets/d24154f7-c920-4a99-a44a-deb69a3b30d7" />
+
+- Lalu, klik continue karena tidak melakukan upgrade ke versi pro.
+- Kemudian, langsung klik done pada **SSH Configuration**.
+- Lalu, langsung klik done pada **Featured server snaps**.
+- Tunggu proses installasi sampai selesai.
+
+
+
   
 
   
