@@ -59,7 +59,18 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="400" alt="image" src="https://github.com/user-attachments/assets/7a5c38e4-d0ad-4ee8-bcc8-41c8ae2f24a0" />
 
-- Kemudian buka cmd dan ketikan perintah `ipconfig`
+- Kemudian, buka cmd dan ketikan perintah `ipconfig`. cari jaringan internet yang terhubung ke perangkat kita, disini saya menggunakan wifi.
+
+  <img width="653" alt="image" src="https://github.com/user-attachments/assets/2d7be215-5b4d-4f64-8365-1ecbd759d8d3" />
+
+- Lalu, masukan IPv4 Addres ke network configuration seperti berikut. Kemudian, klik save.
+
+  <img width="403" alt="image" src="https://github.com/user-attachments/assets/492ef31e-c7d9-44c8-8c0b-036b24101b84" />
+
+- 
+
+  
+  
 
 
 
