@@ -2,7 +2,8 @@
 
 ## Diagram Jaringan
 
-- Perhitungan Jumlah Subnet
+- **Perhitungan Jumlah Subnet**
+
   Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2x (di mana x adalah
   banyaknya angka 1 dalam oktet terakhir di subnet mask).
 
@@ -10,7 +11,8 @@
   Subnet mask = 11111111.11111111.11111111.11111100
   Maka 2^6 = 64 Subnet
 
-- Jumlah host per Subnet
+- **Jumlah host per Subnet**
+
   Jumlah host per subnet bisa kita ketahui melalui rumus (2y)-2 (di mana y adalah banyaknya
   angka 0 dalam oktet terakhir di subnet mask).
 
