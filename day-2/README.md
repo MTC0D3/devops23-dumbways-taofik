@@ -2,6 +2,30 @@
 
 ## Diagram Jaringan
 
+- Perhitungan Jumlah Subnet
+  Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2x (di mana x adalah
+  banyaknya angka 1 dalam oktet terakhir di subnet mask).
+
+  192.168.11.0/30
+  Subnet mask = 11111111.11111111.11111111.11111100
+  Maka 2^6 = 64 Subnet
+
+- Jumlah host per Subnet
+  Jumlah host per subnet bisa kita ketahui melalui rumus (2y)-2 (di mana y adalah banyaknya
+  angka 0 dalam oktet terakhir di subnet mask).
+
+  Dari subnet mask 11111111.11111111.11111111.11111100, oktet terakhirnya adalah 00. Itu artinya, (2^2)-2 = 4-2 = 2 host per subnet.
+
+  Kenapa harus dikurangi 2?
+
+  Karena ada 2 IP address yang tidak bisa dipakai oleh host, yakni network
+  address dan broadcast address.
+
+  Dalam kasus 192.168.11.0/30, network address-nya adalah 192.168.11.0 dan broadcast
+  address-nya adalah 192.168.11.3.
+
+  Jadi, rentang IP address yang valid untuk host adalah 192.168.11.1–192.168.11.2.
+
 ## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
 | Aspek            | SH (Shell)                                                                                                   | BASH (Bourne-Again Shell)                                                                                     |
