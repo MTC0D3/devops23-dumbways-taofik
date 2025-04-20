@@ -93,3 +93,13 @@
 | `chmod 755 file.sh`      | Mengatur permission file secara numerik.                                                   |
 | `ls -l`                  | Menampilkan file + permission                                                              |
 | `chown user:group file`  | Mengubah pemilik dan grup dari suatu file.                                                 |
+
+---
+
+- Memperbarui daftar paket dari repositori.
+
+![alt text](image-1.png)
+
+- Menginstal versi terbaru dari paket yang sudah terpasang.
+
+![alt text](image-2.png)
