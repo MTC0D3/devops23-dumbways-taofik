@@ -2,6 +2,8 @@
 
 ## Diagram Jaringan
 
+![alt text](image.png)
+
 - **Perhitungan Jumlah Subnet**
 
   Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2^x (di mana x adalah
