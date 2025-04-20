@@ -4,7 +4,7 @@
 
 - **Perhitungan Jumlah Subnet**
 
-  Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2x (di mana x adalah
+  Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2^x (di mana x adalah
   banyaknya angka 1 dalam oktet terakhir di subnet mask).
 
   192.168.11.0/30
@@ -13,7 +13,7 @@
 
 - **Jumlah host per Subnet**
 
-  Jumlah host per subnet bisa kita ketahui melalui rumus (2y)-2 (di mana y adalah banyaknya
+  Jumlah host per subnet bisa kita ketahui melalui rumus (2^y)-2 (di mana y adalah banyaknya
   angka 0 dalam oktet terakhir di subnet mask).
 
   Dari subnet mask 11111111.11111111.11111111.11111100, oktet terakhirnya adalah 00. Itu artinya, (2^2)-2 = 4-2 = 2 host per subnet.
