@@ -1,7 +1,5 @@
 # 📘 DevOps Task - Day 1
 
-> > > > > > > 9bb6b66 (upadte readme.md day-1)
-
 ## 🔍 Apa itu DevOps ?
 
 DevOps adalah penghubung antara tim development dan operations agar mempercepat proses development hingga rilis ke publik.
