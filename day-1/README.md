@@ -1,5 +1,10 @@
 # 📘 DevOps Task - Day 1
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9bb6b66 (upadte readme.md day-1)
 ## 🔍 Apa itu DevOps ?
+
 DevOps adalah penghubung antara tim development dan operations agar mempercepat proses development hingga rilis ke publik.
 
 Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu yang berkelanjutan. biasanya ada istilah CI/CD yaitu :
@@ -10,14 +15,15 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
 - **Continuous Deployment (CD)** pada hakikatnya adalah proses yang “serupa tapi tak sama”. Perbedaannya, continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
 
-## 🖥️ Virtual Machine Setup 
+## 🖥️ Virtual Machine Setup
+
 - Pertama kita perlu memiliki dan menjalankan VirtualBox.
-  
+
   <img width="954" alt="image" src="https://github.com/user-attachments/assets/4aa8d262-f93b-42de-8842-24a9feab24a4" />
 
 - Kemudian, klik New untuk membuat Virtual Machine baru.
 - Lalu, beri nama untuk virtual machine dan pilih Os Image yang ingin di install pada VM di sini kita gunakan Ubuntu Server. Janggan lupa centang pada pilihan Skip Unattended Installation agar tidak dibuatkan host otomatis.
-  
+
   <img width="567" alt="image" src="https://github.com/user-attachments/assets/0b1d5a18-6627-4d90-a833-f17d5e1bf1b2" />
 
 - Klik pada Hardware lalu konfigurasi untuk memory dan core processor. saya atur memory di 2GB dan processor di 2 core.
@@ -46,7 +52,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/ff96017a-7ab7-4d77-b95a-31de219ca278" />
 
 - Langsung tekan done jika tidak ada perubahan pada keyboard configuration.
-  
+
   <img width="398" alt="image" src="https://github.com/user-attachments/assets/285c5016-a9b1-4e1f-a646-f71e5f0bc456" />
 
 - Lalu pilih ubuntu server untuk tipe installasi.
@@ -86,7 +92,7 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/afb8c199-39e2-483c-a3e8-88a430f4ca81" />
 
-- Lalu, klik done. Jika ada plihan destructive action pilih continue karena kita melakukan installasi awal dan data masih kosong.  
+- Lalu, klik done. Jika ada plihan destructive action pilih continue karena kita melakukan installasi awal dan data masih kosong.
 
   <img width="401" alt="image" src="https://github.com/user-attachments/assets/74320f91-7835-44fd-bd07-3fce4084ee1a" />
 
@@ -114,23 +120,12 @@ Salah satu istilah dalam DevOps adalah continuous, yang berarti segala sesatu ya
 
   <img width="402" alt="image" src="https://github.com/user-attachments/assets/449f2bcc-744d-47a2-9233-5177a0c47858" />
 
-
 ## 🌐 Installasi Nginx Web Server
+
 - Pertama, jalankan perintah `sudo apt-get -y update` untuk memperbarui repository.
 - Kedua, jalankan perintah `sudo apt-get -y install nginx` untuk memasang paket nginx.
 - Ketiga, cek status nginx sudah berjalan atau tidak dengan perintah `sudo systemctl status nginx`.
-- Kemudian, jika nginx belum berjalan gunakan perintah `sudo systemctl start nginx` atau `sudo systemctl enable nginx`  kalau ingin nginx berjalan otomatis setiap kali server di restart.
+- Kemudian, jika nginx belum berjalan gunakan perintah `sudo systemctl start nginx` atau `sudo systemctl enable nginx` kalau ingin nginx berjalan otomatis setiap kali server di restart.
 - Lalu, uji coba di browser dengan menggunakan ip address masing-masing, bisa di cek dengan perintah `ip a`.
-  
+
   <img width="959" alt="image" src="https://github.com/user-attachments/assets/1b782621-e8ab-4219-8265-3ad15faf2119" />
-
-
-  
-
-  
-
-  
-  
-
-
-
