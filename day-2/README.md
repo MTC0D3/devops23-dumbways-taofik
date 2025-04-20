@@ -1,5 +1,7 @@
 # 📘 DevOps Task - Day 2
 
+## Diagram Jaringan
+
 ## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
 | Aspek            | SH (Shell)                                                                                                   | BASH (Bourne-Again Shell)                                                                                     |
