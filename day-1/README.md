@@ -1,4 +1,4 @@
-# 📘 DevOps Task - Day 2
+# 📘 DevOps Task - Day 1
 ## 🔍 Apa itu DevOps ?
 DevOps adalah penghubung antara tim development dan operations agar mempercepat proses development hingga rilis ke publik.
 
