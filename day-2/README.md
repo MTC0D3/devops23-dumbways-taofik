@@ -2,7 +2,7 @@
 
 ## Diagram Jaringan
 
-![alt text](images/image.png)
+![alt text](image.png)
 
 - **Perhitungan Jumlah Subnet**
 
@@ -98,92 +98,92 @@
 
 - Memperbarui daftar paket dari repositori.
 
-![alt text](images/image-1.png)
+![alt text](image-1.png)
 
 - Menginstal versi terbaru dari paket yang sudah terpasang.
 
-![alt text](images/image-2.png)
+![alt text](image-2.png)
 
 - Membuat direktori baru
 
-![alt text](images/image-3.png)
+![alt text](image-3.png)
 
 - Membuat file kosong
 
-![alt text](images/image-4.png)
+![alt text](image-4.png)
 
 - Menampilkan daftar file dan direktori dalam direktori saat ini.
 
-![alt text](images/image-5.png)
+![alt text](image-5.png)
 
 - Menampilkan daftar file dan direktori dengan detail tambahan (permissions, owner, dll) serta hidden file dan direktori.
 
-![alt text](images/image-6.png)
+![alt text](image-6.png)
 
 - Pindah ke direktori latihan
 
-![alt text](images/image-7.png)
+![alt text](image-7.png)
 
 - Pindah ke direktori induk (parent directory).
 
-![alt text](images/image-8.png)
+![alt text](image-8.png)
 
 - Menyalin file
 
-![alt text](images/image-9.png)
+![alt text](image-9.png)
 
 - Memindahkan file ke direktori latihan
 
-![alt text](images/image-10.png)
+![alt text](image-10.png)
 
 - Mengganti nama file
 
-![alt text](images/image-11.png)
+![alt text](image-11.png)
 
 - Menampilkan string atau teks ke output
 
-![alt text](images/image-12.png)
+![alt text](image-12.png)
 
 - Menampilkan string atau teks ke output file
 
-![alt text](images/image-13.png)
+![alt text](image-13.png)
 
 - Melihat isi file
 
-![alt text](images/image-14.png)
+![alt text](image-14.png)
 
 - Mencari file dan direktori
 
-![alt text](images/image-15.png)
+![alt text](image-15.png)
 
 - Mencari file dengan spesifik
 
-![alt text](images/image-16.png)
+![alt text](image-16.png)
 
 - Mencari teks dalam file
 
-![alt text](images/image-17.png)
+![alt text](image-17.png)
 
 - Membuka teks editor bawaan linux
 
-![alt text](images/image-18.png)
+![alt text](image-18.png)
 
 - Menacri teks di semua file
 
-![alt text](images/image-19.png)
+![alt text](image-19.png)
 
 - Merubah file permission
 
-![alt text](images/image-20.png)
+![alt text](image-20.png)
 
 - Mengubah pemilik dan grup dari suatu file.
 
-![alt text](images/image-21.png)
+![alt text](image-21.png)
 
 - Melihat command yang sudah digunakan
 
-![alt text](images/image-22.png)
+![alt text](image-22.png)
 
 - Berpindah ke root user
 
-![alt text](images/image-23.png)
+![alt text](image-23.png)
