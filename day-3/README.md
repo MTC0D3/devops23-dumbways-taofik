@@ -13,7 +13,6 @@ Gunakan perintah berikut untuk melihat ip address server
 
 ```
 ip a
-
 ```
 
 ![alt text](image.png)
