@@ -146,7 +146,7 @@ sudo systemctl restart sshd
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 ```
 
-![alt text](image-14.png)
+<img src="image-14.png" width="700" height="400" />
 
 ## 💻 Text Manipulation
 
