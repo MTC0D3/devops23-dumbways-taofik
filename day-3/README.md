@@ -73,6 +73,12 @@ ssh-keygen
 
 ![alt text](images/image-7.png)
 
+### 3. Buka file Public Key dan salin isinya
+
+- Saya menggunakan notepad untuk melihat dan menyalin isi file nya
+
+![alt text](image-4.png)
+
 ## Dokumentasi Dasar Command Linux
 
 ### Manajemen Paket
