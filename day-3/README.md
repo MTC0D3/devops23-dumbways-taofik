@@ -45,7 +45,7 @@ sudo systemctl status ssh
 
 ### 4. Akses kembali server
 
-- Jika sudah melakukan installasi dan pengecekan status silhkan akses kembali server dengan perintah berikut.
+- Jika sudah melakukan installasi dan pengecekan status silahkan akses kembali server dengan perintah berikut
 
 ```
 ssh username@ip_address
@@ -55,7 +55,7 @@ ssh username@ip_address
 
 **Catatan** : username dan password yang digunakan harus sama dengan yang ada di server
 
-## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
+## 🔐 Konfigurasi Akses SSH Menggunakan Public Key
 
 | Aspek            | SH (Shell)                                                                                                   | BASH (Bourne-Again Shell)                                                                                     |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
