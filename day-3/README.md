@@ -17,6 +17,16 @@ ip a
 
 ![alt text](image.png)
 
+### 2. Buka Terminal di device pribadi
+
+Disini saya menggunakan bash atau terminal bawaan git kemudian jalankan perintah berikut
+
+```
+ssh username@ip_address
+```
+
+![alt text](image-1.png)
+
 - **Jumlah host per Subnet**
 
   Jumlah host per subnet bisa kita ketahui melalui rumus (2^y)-2 (di mana y adalah banyaknya
