@@ -25,13 +25,35 @@ ip a
 ssh username@ip_address
 ```
 
-![alt text](image-1.png)
-
 - Jika terjadi Connection refused install terlebih dahulu openshh di server nya dengan perintah berikut
 
 ```
 sudo apt install openssh-server
 ```
+
+![alt text](image-2.png)
+
+### 3. Cek apakah SSH sudah berjalan
+
+- Gunakan perintah berikut untuk melihat status SSH
+
+```
+sudo systemctl status ssh
+```
+
+![alt text](image-3.png)
+
+### 4. Akses kembali server
+
+- Jika sudah melakukan installasi dan pengecekan status silhkan akses kembali server dengan perintah berikut.
+
+```
+ssh username@ip_address
+```
+
+![alt text](image-1.png)
+
+**Catatan** : username dan password yang digunakan harus sama dengan yang ada di server
 
 ## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
