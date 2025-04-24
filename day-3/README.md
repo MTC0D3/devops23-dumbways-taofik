@@ -5,18 +5,18 @@
 - Buat step by step penggunaan text manipulation! (grep, sed, cat, echo)
 - Nyalakan ufw dengan memberikan akses untuk port 22, 80, 443, 3000, 5000 dan 6969!
 
-## Manage Server With Terminal
+## 💻 Akses server menggunakan terminal
 
-![alt text](images/image.png)
+### 1. Melihat Ip Adrress Server
 
-- **Perhitungan Jumlah Subnet**
+Gunakan perintah berikut untuk melihat ip address server
 
-  Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2^x (di mana x adalah
-  banyaknya angka 1 dalam oktet terakhir di subnet mask).
+```
+ip a
 
-  192.168.11.0/30
-  Subnet mask = 11111111.11111111.11111111.11111100
-  Maka 2^6 = 64 Subnet
+```
+
+![alt text](image.png)
 
 - **Jumlah host per Subnet**
 
