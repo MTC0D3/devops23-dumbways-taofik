@@ -15,7 +15,7 @@
 ip a
 ```
 
-![alt text](images/image.png)
+<img src="image.png" width="700" height="400" />
 
 ### 2. Akses lewat Terminal device pribadi
 
@@ -31,7 +31,7 @@ ssh username@ip_address
 sudo apt install openssh-server
 ```
 
-![alt text](images/image-2.png)
+<img src="image-2.png" width="700" height="400" />
 
 ### 3. Cek apakah SSH sudah berjalan
 
@@ -41,7 +41,7 @@ sudo apt install openssh-server
 sudo systemctl status ssh
 ```
 
-![alt text](images/image-3.png)
+<img src="image-3.png" width="700" height="400" />
 
 ### 4. Akses kembali server
 
@@ -51,7 +51,7 @@ sudo systemctl status ssh
 ssh username@ip_address
 ```
 
-![alt text](images/image-1.png)
+<img src="image-1.png" width="700" height="400" />
 
 **Catatan** : username dan password yang digunakan harus sama dengan yang ada di server
 
@@ -65,19 +65,19 @@ ssh username@ip_address
 ssh-keygen
 ```
 
-![alt text](images/image-6.png)
+<img src="image-6.png" width="700" height="400" />
 
 ### 2. Buka Folder "C:\Users<nama_user>.ssh"
 
 - Terdapat 2 key yaitu Public key (ekstensi .pub) dan Private Key. Private Key harus disimpan baik-baik dan harus dirahasiakan.
 
-![alt text](images/image-7.png)
+<img src="image-7.png" width="700" height="400" />
 
 ### 3. Buka file Public Key dan salin isinya
 
 - Saya menggunakan notepad untuk melihat dan menyalin isi file nya
 
-![alt text](image-4.png)
+<img src="image-4.png" width="700" height="400" />
 
 ### 4. Akses kembali ke server dengan Terminal
 
@@ -89,13 +89,13 @@ ls
 sudo nano authorized_keys
 ```
 
-![alt text](image-5.png)
+<img src="image-5.png" width="700" height="400" />
 
 ### 5. Paste Public Key pada file "authorized_keys"
 
 - Silahkan paste Public Key pada file "authorized_keys" di server Ubuntu dan simpan
 
-![alt text](image-8.png)
+<img src="image-8.png" width="700" height="400" />
 
 ### 6. Uji coba koneksi ke Server
 
@@ -105,7 +105,7 @@ sudo nano authorized_keys
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 ```
 
-![alt text](image-9.png)
+<img src="image-9.png" width="700" height="400" />
 
 ### 7. konfigurasi login hanya dengan Public Key
 
@@ -115,7 +115,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 sudo nano /etc/ssh/sshd_config
 ```
 
-![alt text](image-10.png)
+<img src="image-10.png" width="700" height="400" />
 
 - Atur parameter sebagai berikut. Setelah selesai simpan file tersebut.
 
@@ -124,7 +124,7 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 ```
 
-![alt text](image-12.png)
+<img src="image-12.png" width="700" height="400" />
 
 **Catatan :**
 PubkeyAuthentication = mengizinkan autentikasi via SSH key.
