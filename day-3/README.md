@@ -148,7 +148,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 <img src="image-14.png" width="700" height="400" />
 
-## 💻 Text Manipulation
+## ✒️ Text Manipulation
 
 ### grep
 
@@ -211,106 +211,4 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ---
 
-### Pengguna & Hak Akses
-
-| Perintah                 | Fungsi                                                                                     |
-| ------------------------ | ------------------------------------------------------------------------------------------ |
-| `whoami`                 | Menampilkan nama user yang sedang aktif.                                                   |
-| `chmod ugoa+rwx file.sh` | Memberikan hak baca, tulis, dan eksekusi kepada semua pengguna (user, group, others, all). |
-| `chmod 755 file.sh`      | Mengatur permission file secara numerik.                                                   |
-| `ls -l`                  | Menampilkan file + permission                                                              |
-| `chown user:group file`  | Mengubah pemilik dan grup dari suatu file.                                                 |
-
----
-
-- Memperbarui daftar paket dari repositori.
-
-![alt text](images/image-1.png)
-
-- Menginstal versi terbaru dari paket yang sudah terpasang.
-
-![alt text](images/image-2.png)
-
-- Membuat direktori baru
-
-![alt text](images/image-3.png)
-
-- Membuat file kosong
-
-![alt text](images/image-4.png)
-
-- Menampilkan daftar file dan direktori dalam direktori saat ini.
-
-![alt text](images/image-5.png)
-
-- Menampilkan daftar file dan direktori dengan detail tambahan (permissions, owner, dll) serta hidden file dan direktori.
-
-![alt text](images/image-6.png)
-
-- Pindah ke direktori latihan
-
-![alt text](images/image-7.png)
-
-- Pindah ke direktori induk (parent directory).
-
-![alt text](images/image-8.png)
-
-- Menyalin file
-
-![alt text](images/image-9.png)
-
-- Memindahkan file ke direktori latihan
-
-![alt text](images/image-10.png)
-
-- Mengganti nama file
-
-![alt text](images/image-11.png)
-
-- Menampilkan string atau teks ke output
-
-![alt text](images/image-12.png)
-
-- Menampilkan string atau teks ke output file
-
-![alt text](images/image-13.png)
-
-- Melihat isi file
-
-![alt text](images/image-14.png)
-
-- Mencari file dan direktori
-
-![alt text](images/image-15.png)
-
-- Mencari file dengan spesifik
-
-![alt text](images/image-16.png)
-
-- Mencari teks dalam file
-
-![alt text](images/image-17.png)
-
-- Membuka teks editor bawaan linux
-
-![alt text](images/image-18.png)
-
-- Menacri teks di semua file
-
-![alt text](images/image-19.png)
-
-- Merubah file permission
-
-![alt text](images/image-20.png)
-
-- Mengubah pemilik dan grup dari suatu file.
-
-![alt text](images/image-21.png)
-
-- Melihat command yang sudah digunakan
-
-![alt text](images/image-22.png)
-
-- Berpindah ke root user
-
-![alt text](images/image-23.png)
+## 🌐 Menyalakan Uncomplicated Firewall (ufw) dan Manajemen Port
