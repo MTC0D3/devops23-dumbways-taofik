@@ -17,7 +17,7 @@ ip a
 
 ![alt text](image.png)
 
-### 2. Buka Terminal di device pribadi
+### 2. Akses lewat Terminal device pribadi
 
 - Disini saya menggunakan bash atau terminal bawaan git kemudian jalankan perintah berikut
 
@@ -32,8 +32,6 @@ ssh username@ip_address
 ```
 sudo apt install openssh-server
 ```
-
-
 
 ## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
