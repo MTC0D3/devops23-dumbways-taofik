@@ -79,6 +79,34 @@ ssh-keygen
 
 ![alt text](image-4.png)
 
+### 4. Akses kembali ke server dengan Terminal
+
+- Kemudian, buka file "authorized_keys" di direktori ~/.ssh lalu gunakan perintah berikut
+
+```
+cd .ssh/
+ls
+sudo nano authorized_keys
+```
+
+![alt text](image-5.png)
+
+### 5. Paste Public Key pada file "authorized_keys"
+
+- Silahkan paste Public Key pada file "authorized_keys" di server Ubuntu dan simpan
+
+![alt text](image-8.png)
+
+### 6. Uji coba koneksi ke Server
+
+- Lakukan pengujian koneksi ke server dengan SSH menggunakan Public Key Terminal dengan perintah berikut
+
+```
+ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
+```
+
+![alt text](image-9.png)
+
 ## Dokumentasi Dasar Command Linux
 
 ### Manajemen Paket
