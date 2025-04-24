@@ -57,10 +57,19 @@ ssh username@ip_address
 
 ## 🔐 Konfigurasi Akses SSH Menggunakan Public Key
 
-| Aspek            | SH (Shell)                                                                                                   | BASH (Bourne-Again Shell)                                                                                     |
-| ---------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| **Definisi**     | SH adalah antarmuka baris perintah dasar yang digunakan untuk menjalankan perintah dan skrip di sistem Unix. | BASH merupakan pengembangan dari Bourne Shell yang menghadirkan fitur tambahan untuk interaksi dan scripting. |
-| **Fungsi Utama** | Shell dasar untuk menjalankan perintah dan skrip sederhana.                                                  | Shell modern dengan fitur lengkap untuk scripting dan interaksi.                                              |
+### 1. Generate Public Key dan Private Key
+
+- Untuk membuat Public Key dan Private Key gunakan perintah berikut
+
+```
+ssh-keygen
+```
+
+![alt text](image-6.png)
+
+### 2. Buka Folder "C:\Users<nama_user>.ssh" dan terdapat 2 key di mana 1 merupakan Public key (ekstensi .pub) dan 1 lagi Private Key. Private Key harus disimpan baik-baik dan harus dirahasiakan.
+
+                                           |
 
 ## Dokumentasi Dasar Command Linux
 
