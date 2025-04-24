@@ -140,7 +140,7 @@ sudo systemctl restart sshd
 
 - Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
 
-![alt text](image-13.png)
+<img src="image-13.png" width="700" height="400" />
 
 ```
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
