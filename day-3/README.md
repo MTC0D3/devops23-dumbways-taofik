@@ -9,7 +9,7 @@
 
 ### 1. Melihat Ip Adrress Server
 
-Gunakan perintah berikut untuk melihat ip address server
+- Gunakan perintah berikut untuk melihat ip address server
 
 ```
 ip a
@@ -19,7 +19,7 @@ ip a
 
 ### 2. Buka Terminal di device pribadi
 
-Disini saya menggunakan bash atau terminal bawaan git kemudian jalankan perintah berikut
+- Disini saya menggunakan bash atau terminal bawaan git kemudian jalankan perintah berikut
 
 ```
 ssh username@ip_address
@@ -27,22 +27,13 @@ ssh username@ip_address
 
 ![alt text](image-1.png)
 
-- **Jumlah host per Subnet**
+- Jika terjadi Connection refused install terlebih dahulu openshh di server nya dengan perintah berikut
 
-  Jumlah host per subnet bisa kita ketahui melalui rumus (2^y)-2 (di mana y adalah banyaknya
-  angka 0 dalam oktet terakhir di subnet mask).
+```
+sudo apt install openssh-server
+```
 
-  Dari subnet mask 11111111.11111111.11111111.11111100, oktet terakhirnya adalah 00. Itu artinya, (2^2)-2 = 4-2 = 2 host per subnet.
 
-  Kenapa harus dikurangi 2?
-
-  Karena ada 2 IP address yang tidak bisa dipakai oleh host, yakni network
-  address dan broadcast address.
-
-  Dalam kasus 192.168.11.0/30, network address-nya adalah 192.168.11.0 dan broadcast
-  address-nya adalah 192.168.11.3.
-
-  Jadi, rentang IP address yang valid untuk host adalah 192.168.11.1–192.168.11.2.
 
 ## Perbedaan SH (Shell) dan BASH (Bourne-Again Shell)
 
