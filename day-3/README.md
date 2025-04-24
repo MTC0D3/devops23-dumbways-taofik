@@ -15,7 +15,7 @@
 ip a
 ```
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ### 2. Akses lewat Terminal device pribadi
 
@@ -31,7 +31,7 @@ ssh username@ip_address
 sudo apt install openssh-server
 ```
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ### 3. Cek apakah SSH sudah berjalan
 
@@ -41,7 +41,7 @@ sudo apt install openssh-server
 sudo systemctl status ssh
 ```
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ### 4. Akses kembali server
 
@@ -51,7 +51,7 @@ sudo systemctl status ssh
 ssh username@ip_address
 ```
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 **Catatan** : username dan password yang digunakan harus sama dengan yang ada di server
 
@@ -65,11 +65,13 @@ ssh username@ip_address
 ssh-keygen
 ```
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
-### 2. Buka Folder "C:\Users<nama_user>.ssh" dan terdapat 2 key di mana 1 merupakan Public key (ekstensi .pub) dan 1 lagi Private Key. Private Key harus disimpan baik-baik dan harus dirahasiakan.
+### 2. Buka Folder "C:\Users<nama_user>.ssh"
 
-                                           |
+- Terdapat 2 key yaitu Public key (ekstensi .pub) dan Private Key. Private Key harus disimpan baik-baik dan harus dirahasiakan.
+
+![alt text](images/image-7.png)
 
 ## Dokumentasi Dasar Command Linux
 
