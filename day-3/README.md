@@ -136,7 +136,7 @@ PasswordAuthentication = menonaktifkan login via password.
 sudo systemctl restart sshd
 ```
 
-- Disconnect SSH dengan mengetikkan "exit" atau ctrl + d di terminal dan coba login ke Server dengan password:
+- Disconnect SSH dengan mengetikkan "exit" atau ctrl + d di terminal dan coba login ke Server dengan password
 
 - Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
 
@@ -148,16 +148,24 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ![alt text](image-14.png)
 
-## Dokumentasi Dasar Command Linux
+## 💻 Text Manipulation
 
-### Manajemen Paket
+### Grep
 
-| Perintah           | Fungsi                                                    |
-| ------------------ | --------------------------------------------------------- |
-| `sudo apt update`  | Memperbarui daftar paket dari repositori.                 |
-| `sudo apt upgrade` | Menginstal versi terbaru dari paket yang sudah terpasang. |
-| `sudo apt install` | Menginstall paket                                         |
-| `sudo apt remove`  | Menghapus paket                                           |
+| Perintah             | Fungsi                                                                                        |
+| -------------------- | --------------------------------------------------------------------------------------------- |
+| `grep hello file`    | Mencari baris yang mengandung kata "hello" di dalam file                                      |
+| `grep -c hello file` | Menghitung jumlah baris yang mengandung kata "hello" di dalam file                            |
+| `grep hello *`       | Mencari semua baris yang mengandung kata "hello" di semua file yang ada di direktori saat ini |
+| `grep -c hello *`    | Menghitung jumlah baris yang mengandung kata "hello" di setiap file di direktori saat ini.    |
+
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)
+
+![alt text](image-18.png)
 
 ---
 
