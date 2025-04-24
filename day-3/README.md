@@ -150,7 +150,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ## 💻 Text Manipulation
 
-### Grep
+### grep
 
 | Perintah             | Fungsi                                                                                        |
 | -------------------- | --------------------------------------------------------------------------------------------- |
@@ -169,13 +169,13 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ---
 
-### Navigasi Direktori
+### sed
 
-| Perintah          | Fungsi                                                   |
-| ----------------- | -------------------------------------------------------- |
-| `pwd`             | Menampilkan path direktori kerja saat ini.               |
-| `cd ..`           | Pindah ke direktori induk (parent directory).            |
-| `cd /path/to/dir` | Pindah ke direktori yang ditentukan dengan path lengkap. |
+| Perintah                       | Fungsi                                                                                                  |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| `sed -i 's/hello/asek/g' file` | Mencari semua teks "hello" dalam file dan menggantinya dengan "asek" tanpa memilik output ke file lain" |
+
+<img src="image-19.png" width="700" height="400" />
 
 ---
 
