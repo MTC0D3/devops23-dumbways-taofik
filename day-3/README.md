@@ -138,9 +138,9 @@ sudo systemctl restart sshd
 
 - Disconnect SSH dengan mengetikkan "exit" atau ctrl + d di terminal dan coba login ke Server dengan password:
 
-![alt text](image-13.png)
-
 - Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
+
+![alt text](image-13.png)
 
 ```
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
