@@ -107,6 +107,47 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ![alt text](image-9.png)
 
+### 7. konfigurasi login hanya dengan Public Key
+
+- Lakukan konfigurasi pada file konfigurasi SSH
+
+```
+sudo nano /etc/ssh/sshd_config
+```
+
+![alt text](image-10.png)
+
+- Atur parameter sebagai berikut. Setelah selesai simpan file tersebut.
+
+```
+PubkeyAuthentication yes
+PasswordAuthentication no
+```
+
+![alt text](image-12.png)
+
+**Catatan :**
+PubkeyAuthentication = mengizinkan autentikasi via SSH key.
+PasswordAuthentication = menonaktifkan login via password.
+
+- Restart SSH service pada terminal
+
+```
+sudo systemctl restart sshd
+```
+
+- Disconnect SSH dengan mengetikkan "exit" atau ctrl + d di terminal dan coba login ke Server dengan password:
+
+![alt text](image-13.png)
+
+- Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
+
+```
+ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
+```
+
+![alt text](image-14.png)
+
 ## Dokumentasi Dasar Command Linux
 
 ### Manajemen Paket
