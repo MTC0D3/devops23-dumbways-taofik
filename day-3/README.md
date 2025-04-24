@@ -195,16 +195,19 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ---
 
-### Manajemen File & Folder
+### echo
 
-| Perintah              | Fungsi                               |
-| --------------------- | ------------------------------------ |
-| `touch file.txt`      | Membuat file kosong                  |
-| `mkdir folder`        | Membuat folder baru                  |
-| `cp file.txt folder/` | Menyalin file ke folder              |
-| `mv file.txt folder/` | Memindahkan atau mengganti nama file |
-| `rm file.txt`         | Menghapus file                       |
-| `rm -r folder/`       | Menghapus folder dan isinya          |
+| Perintah                          | Fungsi                                                  |
+| --------------------------------- | ------------------------------------------------------- |
+| `echo "Hello taofiks"`            | Menampilkan teks biasa                                  |
+| `echo "hai DumbWays" > file1`     | Menimpa isi suatu file (overwrite)                      |
+| `echo "DevOps DumbWays" >> file1` | Menambahkan teks ke baris baru dari suatu file (append) |
+
+<img src="image-23.png" width="700" height="400" />
+
+<img src="image-24.png" width="700" height="400" />
+
+<img src="image-25.png" width="700" height="400" />
 
 ---
 
