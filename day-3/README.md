@@ -1,6 +1,11 @@
-# 📘 DevOps Task - Day 2
+# 📘 DevOps Task - Day 3
 
-## Diagram Jaringan
+- Akses server menggunakan terminal (Windows Terminal/PuTTY/etc.)
+- Konfigurasi ssh kalian agar bisa di akses _hanya menggunakan publickey_ (password dimatikan)
+- Buat step by step penggunaan text manipulation! (grep, sed, cat, echo)
+- Nyalakan ufw dengan memberikan akses untuk port 22, 80, 443, 3000, 5000 dan 6969!
+
+## Manage Server With Terminal
 
 ![alt text](images/image.png)
 
