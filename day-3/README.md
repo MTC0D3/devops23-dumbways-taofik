@@ -171,22 +171,27 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ### sed
 
-| Perintah                       | Fungsi                                                                                                  |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| `sed -i 's/hello/asek/g' file` | Mencari semua teks "hello" dalam file dan menggantinya dengan "asek" tanpa memilik output ke file lain" |
+| Perintah                       | Fungsi                                                                                                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `sed -i 's/hello/asek/g' file` | Mencari semua teks "hello" dalam file dan menggantinya dengan "asek" tanpa memilik output ke file lain |
 
 <img src="image-19.png" width="700" height="400" />
 
 ---
 
-### Melihat isi direktori
+### cat
 
-| Perintah | Fungsi                                                                                  |
-| -------- | --------------------------------------------------------------------------------------- |
-| `ls`     | Menampilkan daftar file dan direktori dalam direktori saat ini.                         |
-| `ls -l`  | Menampilkan daftar file dan direktori dengan detail tambahan (permissions, owner, dll). |
-| `ls -a`  | Menampilkan semua file, termasuk file tersembunyi (yang dimulai dengan titik).          |
-| `ls -h`  | Menampilkan ukuran file dalam format yang lebih mudah dibaca (misal: KB, MB).           |
+| Perintah                  | Fungsi                                                             |
+| ------------------------- | ------------------------------------------------------------------ |
+| `cat file`                | Melihat isi dari suatu file                                        |
+| `cat > file1`             | Membuat file baru dengan isi sesuai teks yang diinputkan           |
+| `cat file1 file2 > file3` | Menggabungkan / menyisipkan teks dalam beberapa file ke suatu file |
+
+<img src="image-20.png" width="700" height="400" />
+
+<img src="image-21.png" width="700" height="400" />
+
+<img src="image-22.png" width="700" height="400" />
 
 ---
 
