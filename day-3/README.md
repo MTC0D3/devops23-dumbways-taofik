@@ -159,6 +159,8 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 | `grep hello *`       | Mencari semua baris yang mengandung kata "hello" di semua file yang ada di direktori saat ini |
 | `grep -c hello *`    | Menghitung jumlah baris yang mengandung kata "hello" di setiap file di direktori saat ini.    |
 
+<img src="image-15.png" width="200" height="200" />
+
 ![alt text](image-15.png)
 
 ![alt text](image-16.png)
