@@ -15,7 +15,7 @@
 ip a
 ```
 
-<img src="image.png" width="700" height="400" />
+<img src="images/image.png" width="700" height="400" />
 
 ### 2. Akses lewat Terminal device pribadi
 
@@ -31,7 +31,7 @@ ssh username@ip_address
 sudo apt install openssh-server
 ```
 
-<img src="image-2.png" width="700" height="400" />
+<img src="images/image-2.png" width="700" height="400" />
 
 ### 3. Cek apakah SSH sudah berjalan
 
@@ -41,7 +41,7 @@ sudo apt install openssh-server
 sudo systemctl status ssh
 ```
 
-<img src="image-3.png" width="700" height="400" />
+<img src="images/image-3.png" width="700" height="400" />
 
 ### 4. Akses kembali server
 
@@ -51,7 +51,7 @@ sudo systemctl status ssh
 ssh username@ip_address
 ```
 
-<img src="image-1.png" width="700" height="400" />
+<img src="images/image-1.png" width="700" height="400" />
 
 **Catatan** : username dan password yang digunakan harus sama dengan yang ada di server
 
@@ -65,19 +65,19 @@ ssh username@ip_address
 ssh-keygen
 ```
 
-<img src="image-6.png" width="700" height="400" />
+<img src="images/image-6.png" width="700" height="400" />
 
 ### 2. Buka Folder "C:\Users<nama_user>.ssh"
 
 - Terdapat 2 key yaitu Public key (ekstensi .pub) dan Private Key. Private Key harus disimpan baik-baik dan harus dirahasiakan.
 
-<img src="image-7.png" width="700" height="400" />
+<img src="images/image-7.png" width="700" height="400" />
 
 ### 3. Buka file Public Key dan salin isinya
 
 - Saya menggunakan notepad untuk melihat dan menyalin isi file nya
 
-<img src="image-4.png" width="700" height="400" />
+<img src="images/image-4.png" width="700" height="400" />
 
 ### 4. Akses kembali ke server dengan Terminal
 
@@ -89,13 +89,13 @@ ls
 sudo nano authorized_keys
 ```
 
-<img src="image-5.png" width="700" height="400" />
+<img src="images/image-5.png" width="700" height="400" />
 
 ### 5. Paste Public Key pada file "authorized_keys"
 
 - Silahkan paste Public Key pada file "authorized_keys" di server Ubuntu dan simpan
 
-<img src="image-8.png" width="700" height="400" />
+<img src="images/image-8.png" width="700" height="400" />
 
 ### 6. Uji coba koneksi ke Server
 
@@ -105,7 +105,7 @@ sudo nano authorized_keys
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 ```
 
-<img src="image-9.png" width="700" height="400" />
+<img src="images/image-9.png" width="700" height="400" />
 
 ### 7. konfigurasi login hanya dengan Public Key
 
@@ -115,7 +115,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 sudo nano /etc/ssh/sshd_config
 ```
 
-<img src="image-10.png" width="700" height="400" />
+<img src="images/image-10.png" width="700" height="400" />
 
 - Atur parameter sebagai berikut. Setelah selesai simpan file tersebut.
 
@@ -124,7 +124,7 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 ```
 
-<img src="image-12.png" width="700" height="400" />
+<img src="images/image-12.png" width="700" height="400" />
 
 **Catatan :**
 PubkeyAuthentication = mengizinkan autentikasi via SSH key.
@@ -140,13 +140,13 @@ sudo systemctl restart sshd
 
 - Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
 
-<img src="image-13.png" width="700" height="400" />
+<img src="images/image-13.png" width="700" height="400" />
 
 ```
 ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 ```
 
-<img src="image-14.png" width="700" height="400" />
+<img src="images/image-14.png" width="700" height="400" />
 
 ## ✒️ Text Manipulation
 
@@ -159,13 +159,13 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 | `grep hello *`       | Mencari semua baris yang mengandung kata "hello" di semua file yang ada di direktori saat ini |
 | `grep -c hello *`    | Menghitung jumlah baris yang mengandung kata "hello" di setiap file di direktori saat ini.    |
 
-<img src="image-15.png" width="700" height="400" />
+<img src="images/image-15.png" width="700" height="400" />
 
-<img src="image-16.png" width="700" height="400" />
+<img src="images/image-16.png" width="700" height="400" />
 
-<img src="image-17.png" width="700" height="400" />
+<img src="images/image-17.png" width="700" height="400" />
 
-<img src="image-18.png" width="700" height="400" />
+<img src="images/image-18.png" width="700" height="400" />
 
 ---
 
@@ -175,7 +175,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 | ------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `sed -i 's/hello/asek/g' file` | Mencari semua teks "hello" dalam file dan menggantinya dengan "asek" tanpa memilik output ke file lain |
 
-<img src="image-19.png" width="700" height="400" />
+<img src="images/image-19.png" width="700" height="400" />
 
 ---
 
@@ -187,11 +187,11 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 | `cat > file1`             | Membuat file baru dengan isi sesuai teks yang diinputkan           |
 | `cat file1 file2 > file3` | Menggabungkan / menyisipkan teks dalam beberapa file ke suatu file |
 
-<img src="image-20.png" width="700" height="400" />
+<img src="images/image-20.png" width="700" height="400" />
 
-<img src="image-21.png" width="700" height="400" />
+<img src="images/image-21.png" width="700" height="400" />
 
-<img src="image-22.png" width="700" height="400" />
+<img src="images/image-22.png" width="700" height="400" />
 
 ---
 
@@ -203,11 +203,11 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 | `echo "hai DumbWays" > file1`     | Menimpa isi suatu file (overwrite)                      |
 | `echo "DevOps DumbWays" >> file1` | Menambahkan teks ke baris baru dari suatu file (append) |
 
-<img src="image-23.png" width="700" height="400" />
+<img src="images/image-23.png" width="700" height="400" />
 
-<img src="image-24.png" width="700" height="400" />
+<img src="images/image-24.png" width="700" height="400" />
 
-<img src="image-25.png" width="700" height="400" />
+<img src="images/image-25.png" width="700" height="400" />
 
 ## 🌐 Menyalakan Uncomplicated Firewall (ufw) dan Manajemen Port
 
@@ -219,7 +219,7 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 sudo ufw enable
 ```
 
-<img src="image-26.png" width="700" height="400" />
+<img src="images/image-26.png" width="700" height="400" />
 
 ### 2. Mengizinkan OpenSSH
 
@@ -229,7 +229,7 @@ sudo ufw enable
 sudo ufw allow "OpenSSH"
 ```
 
-<img src="image-28.png" width="700" height="400" />
+<img src="images/image-28.png" width="700" height="400" />
 
 ### 3. Mengizinkan Port 22, 80, 443, 3000, 5000, dan 6969
 
@@ -244,6 +244,6 @@ sudo ufw allow 5000
 sudo ufw allow 6969
 ```
 
-<img src="image-29.png" width="700" height="400" />
+<img src="images/image-29.png" width="700" height="400" />
 
-<img src="image-30.png" width="700" height="400" />
+<img src="images/image-30.png" width="700" height="400" />
