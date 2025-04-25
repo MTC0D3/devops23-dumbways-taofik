@@ -23,6 +23,8 @@
 | `git restore <file>`    | Mengembalikan file ke versi terakhir dari commit terakhir      |
 | `git restore --staged`  | Menghapus file dari staging area, tapi tidak mengubah isi file |
 
+---
+
 ### Bekerja dengan Remote
 
 | Perintah                      | Fungsi                                            |
@@ -32,6 +34,8 @@
 | `git pull origin <branch>`    | Mengambil dan menggabungkan perubahan dari remote |
 | `git fetch`                   | Mengambil semua update dari remote tanpa merge    |
 | `git remote -v`               | Melihat daftar remote repositori                  |
+
+---
 
 ### Branching dan Merging
 
