@@ -10,22 +10,22 @@
 
 <img src="image.png" width="700" height="400" />
 
-### Perintah Dasar Git
+### Perintah Dasar
 
-| Perintah                | Fungsi                                                         |
-| :---------------------- | :------------------------------------------------------------- |
-| `git init`              | Membuat repositori baru                                        |
-| `git clone <url>`       | Mengunduh repositori dari remote                               |
-| `git status`            | Melihat status file yang diubah atau belum di-commit           |
-| `git add <file>`        | Menambahkan file ke staging area                               |
-| `git commit -m "pesan"` | Menyimpan perubahan ke repositori lokal                        |
-| `git log`               | Melihat riwayat commit                                         |
-| `git restore <file>`    | Mengembalikan file ke versi terakhir dari commit terakhir      |
-| `git restore --staged`  | Menghapus file dari staging area, tapi tidak mengubah isi file |
+| Perintah                | Fungsi                                                          |
+| :---------------------- | :-------------------------------------------------------------- |
+| `git init`              | Membuat repositori baru                                         |
+| `git clone <url>`       | Mengunduh repositori dari repositori server                     |
+| `git status`            | Melihat status file yang diubah atau belum di-commit            |
+| `git add <file>`        | Menambahkan file ke staging index                               |
+| `git commit -m "pesan"` | Menyimpan perubahan ke repositori lokal                         |
+| `git log`               | Melihat riwayat commit                                          |
+| `git restore <file>`    | Mengembalikan file ke versi terakhir dari commit terakhir       |
+| `git restore --staged`  | Menghapus file dari staging index, tapi tidak mengubah isi file |
 
 ---
 
-### Bekerja dengan Remote
+### Remote
 
 | Perintah                      | Fungsi                                            |
 | :---------------------------- | :------------------------------------------------ |
@@ -37,7 +37,7 @@
 
 ---
 
-### Branching dan Merging
+### Branching & Merging
 
 | Perintah                 | Fungsi                                        |
 | :----------------------- | :-------------------------------------------- |
