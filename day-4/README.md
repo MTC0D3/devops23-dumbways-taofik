@@ -7,3 +7,5 @@
 ## Pengertian Git
 
 - Git adalah satu version control system yag memiliki fitur unggulan distributed version control yang artinya penyimpanan git tidak hanya berada dalam satu tempat saja melainkan semua orang yang terlibat dalam pengkodean proyek akan menyimpan database git, sehingga akan memudahkan dalam mengelola proyek baik online atau offline.
+
+<img src="image.png" width="700" height="400" />
