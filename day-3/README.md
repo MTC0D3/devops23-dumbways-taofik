@@ -209,6 +209,41 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 <img src="image-25.png" width="700" height="400" />
 
----
-
 ## 🌐 Menyalakan Uncomplicated Firewall (ufw) dan Manajemen Port
+
+### 1. Menyalakan UFW
+
+- Gunakan perintah berikut untuk menyalakan ufw
+
+```
+sudo ufw enable
+```
+
+<img src="image-26.png" width="700" height="400" />
+
+### 2. Mengizinkan OpenSSH
+
+- Gunakan perintah berikut untuk mrngizinkan OpenSSH
+
+```
+sudo ufw allow "OpenSSH"
+```
+
+<img src="image-28.png" width="700" height="400" />
+
+### 3. Mengizinkan Port 22, 80, 443, 3000, 5000, dan 6969
+
+- Gunakan perintah berikut untuk mengizinkan port
+
+```
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 3000
+sudo ufw allow 5000
+sudo ufw allow 6969
+```
+
+<img src="image-29.png" width="700" height="400" />
+
+<img src="image-30.png" width="700" height="400" />
