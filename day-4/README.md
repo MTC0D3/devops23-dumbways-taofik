@@ -114,3 +114,40 @@ ssh git@github.com -T
 Jika muncul pesan seperti berikut maka koneksi berhasil
 
 <img src="image-6.png" width="700" height="400" />
+
+### 6. Buat direktori dan beberapa file (Opsional)
+
+- Buatlah sebuah direktori dan beberapa file dengan perintah berikut
+
+```
+mkdir day-4
+cd day-4
+echo "Hai Taofik" > file1
+"Semangat yaa" > file2
+echo "Bisa koo" > file3
+ls
+```
+
+<img src="image-7.png" width="700" height="400" />
+
+### 7. Buat repositori lokal baru dengan nama "dumbways-batch-23"
+
+- Gunakan perintah berikut untuk membuat repositori lokal
+
+```
+git init dumbways-batch-23
+```
+
+<img src="image-8.png" width="700" height="400" />
+
+### 8. Pindahkan file1, file2, dan file3 ke direktori "dumbways-batch-23"
+
+- Gunakan perintah berikut untuk memindahkan file
+
+```
+mv file1 dumbways-batch-23
+mv file2 dumbways-batch-23
+mv file3 dumbways-batch-23
+```
+
+<img src="image-9.png" width="700" height="400" />
