@@ -8,7 +8,7 @@
 
 - Git adalah satu version control system yag memiliki fitur unggulan distributed version control yang artinya penyimpanan git tidak hanya berada dalam satu tempat saja melainkan semua orang yang terlibat dalam pengkodean proyek akan menyimpan database git, sehingga akan memudahkan dalam mengelola proyek baik online atau offline.
 
-<img src="image.png" width="700" height="400" />
+<img src="images/image.png" width="700" height="400" />
 
 ### Perintah Dasar
 
@@ -60,7 +60,7 @@ git config --global user.email "<email>"
 git config --list
 ```
 
-<img src="image-1.png" width="700" height="400" />
+<img src="images/image-1.png" width="700" height="400" />
 
 ### 2. Cek apakah Public Key dan Private Key sudah ada
 
@@ -71,7 +71,7 @@ cd .ssh
 ls
 ```
 
-<img src="image-2.png" width="700" height="400" />
+<img src="images/image-2.png" width="700" height="400" />
 
 ### 3. Buat pasangan Public Key dan Private Key (Jika belum ada)
 
@@ -89,17 +89,17 @@ ssh-keygen
 cat id_rsa.pub
 ```
 
-<img src="image-3.png" width="700" height="400" />
+<img src="images/image-3.png" width="700" height="400" />
 
 ### 5. Konfigurasi di github
 
 - Masuk ke menu settings pilih tab SSH and GPG keys
 
-<img src="image-4.png" width="700" height="400" />
+<img src="images/image-4.png" width="700" height="400" />
 
 - Pilih new SSH kemudian masukan title dan masukan public key di form key kemudian klik add SSH key
 
-<img src="image-5.png" width="700" height="400" />
+<img src="images/image-5.png" width="700" height="400" />
 
 - Github akan mengonfirmasi dengan meminta password login akun Github, mengisi password dan tekan Confirm
 
@@ -113,7 +113,7 @@ ssh git@github.com -T
 
 Jika muncul pesan seperti berikut maka koneksi berhasil
 
-<img src="image-6.png" width="700" height="400" />
+<img src="images/image-6.png" width="700" height="400" />
 
 ### 6. Buat direktori dan beberapa file (Opsional)
 
@@ -128,7 +128,7 @@ echo "Bisa koo" > file3
 ls
 ```
 
-<img src="image-7.png" width="700" height="400" />
+<img src="images/image-7.png" width="700" height="400" />
 
 ### 7. Buat repositori lokal baru dengan nama "dumbways-batch-23"
 
@@ -138,7 +138,7 @@ ls
 git init dumbways-batch-23
 ```
 
-<img src="image-8.png" width="700" height="400" />
+<img src="images/image-8.png" width="700" height="400" />
 
 ### 8. Pindahkan file1, file2, dan file3 ke direktori "dumbways-batch-23"
 
@@ -150,7 +150,7 @@ mv file2 dumbways-batch-23
 mv file3 dumbways-batch-23
 ```
 
-<img src="image-9.png" width="700" height="400" />
+<img src="images/image-9.png" width="700" height="400" />
 
 ### 9. Membuat .gitignore untuk menyimpan file atau direktori yang akan diabaikan git
 
@@ -160,9 +160,9 @@ mv file3 dumbways-batch-23
 nano .gitignore
 ```
 
-<img src="image-11.png" width="700" height="400" />
+<img src="images/image-11.png" width="700" height="400" />
 
-<img src="image-10.png" width="700" height="400" />
+<img src="images/image-10.png" width="700" height="400" />
 
 ### 10. Menambahkan perubahan repositori ke staging index
 
@@ -173,7 +173,7 @@ git add .
 git status
 ```
 
-<img src="image-12.png" width="700" height="400" />
+<img src="images/image-12.png" width="700" height="400" />
 
 ### 11. Melakukan commit dan memberikan pesan "First commit"
 
@@ -183,7 +183,7 @@ git status
 git commit -m "First commit"
 ```
 
-<img src="image-13.png" width="700" height="400" />
+<img src="images/image-13.png" width="700" height="400" />
 
 ### 12. Restore repositori
 
@@ -193,13 +193,13 @@ git commit -m "First commit"
 git restore file1
 ```
 
-<img src="image-14.png" width="700" height="400" />
+<img src="images/image-14.png" width="700" height="400" />
 
 ### 13. Buat repositori baru di Github
 
 - Buat repositori dengan nama yang sama seperti di repo lokal yaitu "dumbways-batch-23"
 
-<img src="image-15.png" width="700" height="400" />
+<img src="images/image-15.png" width="700" height="400" />
 
 ### 14. Menghubungkan repo Github dengan repo lokal
 
@@ -209,9 +209,9 @@ git restore file1
 git remote add origin git@github.com:MTC0D3/dumbways-batch-23.git
 ```
 
-<img src="image-16.png" width="700" height="400" />
+<img src="images/image-16.png" width="700" height="400" />
 
-<img src="image-17.png" width="700" height="400" />
+<img src="images/image-17.png" width="700" height="400" />
 
 - Jika ingin mengganti branch yang tersedia, dapat menggunakan command berikut:
 
@@ -219,7 +219,7 @@ git remote add origin git@github.com:MTC0D3/dumbways-batch-23.git
 git branch -M <branch>
 ```
 
-<img src="image-18.png" width="700" height="400" />
+<img src="images/image-18.png" width="700" height="400" />
 
 ### 15. Mengirim perubahan ke repositori Github
 
@@ -229,11 +229,11 @@ git branch -M <branch>
 git push -u origin master
 ```
 
-<img src="image-19.png" width="700" height="400" />
+<img src="images/image-19.png" width="700" height="400" />
 
 ### 16. Maka sudah terjadi perubahan di repositori Github "dumbways-batch-23"
 
-<img src="image-20.png" width="700" height="400" />
+<img src="images/image-20.png" width="700" height="400" />
 
 ## ⚔️ Manage repository menggunakan terminal
 
@@ -252,12 +252,39 @@ git push -u origin master
 git status
 ```
 
-<img src="image-21.png" width="700" height="400" />
+<img src="images/image-21.png" width="700" height="400" />
 
 ### 2. Menambahkan perubahan repositori ke staging index
 
-- Secara default saat menambah file baru, file tersebut tidak akan di track perubahannya, Gunakan perintah berikut untuk menambahkan ke staging index
+- Gunakan perintah berikut untuk menambahkan ke staging index
 
 ```
 git add .
 ```
+
+<img src="images/image-22.png" width="700" height="400" />
+
+### 3. Melakukan commit dan memberikan pesan
+
+- Gunakan perintah berikut untuk melakukan commit
+
+```
+git commit -m "Update Readme.md task day-4"
+```
+
+<img src="images/image-23.png" width="700" height="400" />
+
+### 4. Mengirim perubahan ke repositori Github
+
+- Gunakan perintah berikut untuk mengirim perubahan
+
+```
+git push
+```
+
+**Catatan :**
+
+- Saya telah menggunakan -u singkatan dari --set-upstream sebelumnya, artinya:
+- Sudah di atur supaya next time kamu tinggal ketik git push atau git pull tanpa harus sebut nama branch lagi, karena Git udah tahu branch lokal ini terhubung ke branch master di remote origin.
+
+<img src="images/image-24.png" width="700" height="400" />
