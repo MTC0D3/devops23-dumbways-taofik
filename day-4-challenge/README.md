@@ -34,14 +34,3 @@
 <img src="image-5.png" width="700" height="400" />
 
 ## 📝 Demonstrasi Git Pull Request
-
-```
-git push
-```
-
-**Catatan :**
-
-- Saya telah menggunakan -u singkatan dari --set-upstream sebelumnya, artinya:
-- Sudah di atur supaya next time kamu tinggal ketik git push atau git pull tanpa harus sebut nama branch lagi, karena Git udah tahu branch lokal ini terhubung ke branch master di remote origin.
-
-<img src="images/image-24.png" width="700" height="400" />
