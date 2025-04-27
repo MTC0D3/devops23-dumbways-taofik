@@ -8,7 +8,7 @@
 
 - Membuat file config di direktori 'C:\Users\nama_user\.ssh'
 
-<img src="image.png" width="700" height="400" />
+<img src="images/image.png" width="700" height="400" />
 
 - Buka file config dengan notepad dan menambahkan script berikut kemudian simpan:
 
@@ -20,7 +20,7 @@ Host vm-dumbways
     IdentityFile ~/.ssh/taofiks_key
 ```
 
-<img src="image-1.png" width="700" height="400" />
+<img src="images/image-1.png" width="700" height="400" />
 
 - Buka terminal lalu login SSH dengan command berikut:
 
@@ -28,7 +28,7 @@ Host vm-dumbways
 ssh vm-dumbways
 ```
 
-<img src="image-2.png" width="700" height="400" />
+<img src="images/image-2.png" width="700" height="400" />
 
 ## 📝 Mengubah Konfigurasi Port SSH ke 6969
 
@@ -38,13 +38,13 @@ ssh vm-dumbways
 sudo nano /etc/ssh/sshd_config
 ```
 
-<img src="image-3.png" width="700" height="400" />
+<img src="images/image-3.png" width="700" height="400" />
 
 - Ubah konfigurasi port yang sebelumnya default 22 menjadi 6969. Setelah selesai lalu simpan file konfigurasi tersebut.
 
-<img src="image-4.png" width="700" height="400" />
+<img src="images/image-4.png" width="700" height="400" />
 
-<img src="image-5.png" width="700" height="400" />
+<img src="images/image-5.png" width="700" height="400" />
 
 - Restart service SSH
 
@@ -52,21 +52,21 @@ sudo nano /etc/ssh/sshd_config
 sudo systemctl restart ssh
 ```
 
-<img src="image-6.png" width="700" height="400" />
+<img src="images/image-6.png" width="700" height="400" />
 
 - Logout dari SSH dengan mengeksekusi command exit, lalu masuk kembali
 
-<img src="image-7.png" width="700" height="400" />
+<img src="images/image-7.png" width="700" height="400" />
 
 - Diketahui koneksi pada port 22 ditolak, untuk mengatasinya maka diperlukan modifikasi pada file 'C:\Users\nama_user\.ssh\config' dengan mengubah konfigurasi port dari 22 ke 6969
 
-<img src="image-8.png" width="700" height="400" />
+<img src="images/image-8.png" width="700" height="400" />
 
-<img src="image-9.png" width="700" height="400" />
+<img src="images/image-9.png" width="700" height="400" />
 
 - Simpan file config dan coba login ulang pada SSH Server
 
-<img src="image-10.png" width="700" height="400" />
+<img src="images/image-10.png" width="700" height="400" />
 
 ## ⚔️ Pembatasan Akses Server melalui SSH Hanya 1 Device
 
@@ -84,7 +84,7 @@ MaxSessions 1 = Maksimal 1 sesi SSH per koneksi.
 
 MaxStartups 1:1:1 = Cuma 1 koneksi SSH diizinkan pada saat bersamaan (dengan delay 0%).
 
-<img src="image-11.png" width="700" height="400" />
+<img src="images/image-11.png" width="700" height="400" />
 
 - Restart service SSH
 
@@ -92,10 +92,10 @@ MaxStartups 1:1:1 = Cuma 1 koneksi SSH diizinkan pada saat bersamaan (dengan del
 sudo systemctl restart ssh
 ```
 
-<img src="image-12.png" width="700" height="400" />
+<img src="images/image-12.png" width="700" height="400" />
 
 - Uji coba dengan device lain, maka akan terjadi Connection refused
 
-<img src="image-14.png" width="700" height="400" />
+<img src="images/image-14.png" width="700" height="400" />
 
-<img src="image-15.jpg" width="700" height="400" />
+<img src="images/image-15.jpg" width="700" height="400" />
