@@ -211,6 +211,14 @@ ssh -i ~/.ssh/taofiks_key taofiks@192.168.100.104
 
 ## 🌐 Menyalakan Uncomplicated Firewall (ufw) dan Manajemen Port
 
+### Penjelasan
+
+- UFW (Uncomplicated Firewall) adalah alat firewall bawaan Linux, terutama di Ubuntu, yang dibuat untuk mempermudah pengguna dalam mengelola koneksi jaringan. Dengan UFW, pengguna tidak perlu lagi menulis aturan iptables yang rumit, karena semua pengaturan dapat dilakukan dengan perintah sederhana.
+
+### Fungsi
+
+- Fungsi utama UFW adalah untuk melindungi sistem dengan mengatur lalu lintas jaringan yang diizinkan atau diblokir.
+
 ### 1. Menyalakan UFW
 
 - Gunakan perintah berikut untuk menyalakan ufw
