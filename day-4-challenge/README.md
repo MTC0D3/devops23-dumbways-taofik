@@ -34,3 +34,9 @@
 <img src="image-5.png" width="700" height="400" />
 
 ## 📝 Demonstrasi Git Pull Request
+
+- Clone repositori dumbways-batch-23 ke direktori lokal
+
+```
+git clone git@github.com:ghauzar/dumbways-batch-23.git backend-1
+```

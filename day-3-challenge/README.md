@@ -70,32 +70,34 @@ sudo systemctl restart ssh
 
 ## ⚔️ Pembatasan Akses Server melalui SSH Hanya 1 Device
 
-- Buka konfigurasi SSH pada Ubuntu Server dengan text editor nano
+- Buka file /etc/hosts.allow dengan text editor nano
+- Tambahkan kode berikut, ganti IP_ADDRESS dengan alamat IP perangkat yang boleh login
 
 ```
-sudo nano /etc/ssh/sshd_config
+sshd: IP_ADDRESS
 ```
-
-- Ubah konfigurasi MaxSessions dan MaxStartups. Setelah selesai lalu simpan file konfigurasi tersebut.
-
-**Catatan :**
-
-MaxSessions 1 = Maksimal 1 sesi SSH per koneksi.
-
-MaxStartups 1:1:1 = Cuma 1 koneksi SSH diizinkan pada saat bersamaan (dengan delay 0%).
 
 <img src="images/image-11.png" width="700" height="400" />
 
-- Restart service SSH
+- Buka file /etc/hosts.deny dengan text editor nano
+- Tambahkan kode berikut untuk menolak semua koneksi lain
 
 ```
-sudo systemctl restart ssh
+sshd: ALL
 ```
 
 <img src="images/image-12.png" width="700" height="400" />
 
-- Uji coba dengan device lain, maka akan terjadi Connection refused
+- Restart service SSH
+
+```
+sudo systemctl restart sshd
+```
+
+<img src="images/image-13.png" width="700" height="400" />
+
+- Uji coba dengan device lain, maka akan ditolak
 
 <img src="images/image-14.png" width="700" height="400" />
 
-<img src="images/image-15.jpg" width="700" height="400" />
+<img src="images/image-15.png" width="700" height="400" />
