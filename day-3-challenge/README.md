@@ -94,8 +94,8 @@ sudo systemctl restart ssh
 
 <img src="image-12.png" width="700" height="400" />
 
-- Uji coba denga vm lain, pastikan vm lain bisa ping ke vm-dumbways.
+- Uji coba dengan device lain, maka akan terjadi Connection refused
 
-<img src="image-13.png" width="700" height="400" />
+<img src="image-14.png" width="700" height="400" />
 
-- Dari vm baru, coba SSH ke vm-dumbways
+<img src="image-15.jpg" width="700" height="400" />
