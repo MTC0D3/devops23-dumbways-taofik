@@ -151,3 +151,86 @@ mv file3 dumbways-batch-23
 ```
 
 <img src="image-9.png" width="700" height="400" />
+
+### 9. Membuat .gitignore untuk menyimpan file atau direktori yang akan diabaikan git
+
+- Buat file .gitignore dengan perintah berikut
+
+```
+nano .gitignore
+```
+
+<img src="image-11.png" width="700" height="400" />
+
+<img src="image-10.png" width="700" height="400" />
+
+### 10. Menambahkan project ke staging index
+
+- Gunakan perintah berikut untuk menambahkan projek ke staging index
+
+```
+git add .
+git status
+```
+
+<img src="image-12.png" width="700" height="400" />
+
+### 11. Melakukan commit dan memberikan pesan "First commit"
+
+- Gunakan perintah berikut untuk menyimpan projek ke repo lokal dan menambahkan pesan
+
+```
+git commit -m "First commit"
+```
+
+<img src="image-13.png" width="700" height="400" />
+
+### 12. Restore project atau file
+
+- Jika ingin mengembalikan atau merubah isi file sebelum di commit sesuai dengan sebelumnya gunakan git restore
+
+```
+git restore file1
+```
+
+<img src="image-14.png" width="700" height="400" />
+
+### 13. Buat repositori baru di Github
+
+- Buat repositori dengan nama yang sama seperti di repo lokal yaitu "dumbways-batch-23"
+
+<img src="image-15.png" width="700" height="400" />
+
+### 14. Menghubungkan repo Github dengan repo lokal
+
+- Remote sesuai link dan pastikan memilih SSH di atas sebab perubahan akan dikirim ke repositori Github menggunakan command SSH
+
+```
+git remote add origin git@github.com:MTC0D3/dumbways-batch-23.git
+```
+
+<img src="image-16.png" width="700" height="400" />
+
+<img src="image-17.png" width="700" height="400" />
+
+- Jika ingin mengganti branch yang tersedia, dapat menggunakan command berikut:
+
+```
+git branch -M <branch>
+```
+
+<img src="image-18.png" width="700" height="400" />
+
+### 15. Mengirim perubahan ke repo Github
+
+- Gunakan perintah berikut untuk mengirim perubahan
+
+```
+git push -u origin master
+```
+
+<img src="image-19.png" width="700" height="400" />
+
+### 16. Maka sudah terjadi perubahan di repositori Github "dumbways-batch-23"
+
+<img src="image-20.png" width="700" height="400" />
