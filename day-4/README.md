@@ -164,9 +164,9 @@ nano .gitignore
 
 <img src="image-10.png" width="700" height="400" />
 
-### 10. Menambahkan project ke staging index
+### 10. Menambahkan perubahan repositori ke staging index
 
-- Gunakan perintah berikut untuk menambahkan projek ke staging index
+- Gunakan perintah berikut untuk menambahkan perubahan repo kita ke staging index
 
 ```
 git add .
@@ -185,7 +185,7 @@ git commit -m "First commit"
 
 <img src="image-13.png" width="700" height="400" />
 
-### 12. Restore project atau file
+### 12. Restore repositori
 
 - Jika ingin mengembalikan atau merubah isi file sebelum di commit sesuai dengan sebelumnya gunakan git restore
 
@@ -221,7 +221,7 @@ git branch -M <branch>
 
 <img src="image-18.png" width="700" height="400" />
 
-### 15. Mengirim perubahan ke repo Github
+### 15. Mengirim perubahan ke repositori Github
 
 - Gunakan perintah berikut untuk mengirim perubahan
 
@@ -234,3 +234,30 @@ git push -u origin master
 ### 16. Maka sudah terjadi perubahan di repositori Github "dumbways-batch-23"
 
 <img src="image-20.png" width="700" height="400" />
+
+## ⚔️ Manage repository menggunakan terminal
+
+### The Three States
+
+- Git memiliki tiga state terhadap file kita: modified, staged dan committed
+- Modified artinya kita mengubah (menambah, mengedit, menghapus) file, namun belum disimpan secara permanen ke repository
+- Staged artinya kita menandai modifikasi yang kita lakukan terhadap file akan disimpan secara permanen ke repository
+- Committed artinya data sudah aman disimpan di repository
+
+### 1. Memeriksa status dari repositori lokal
+
+- Gunakan perintah berikut untuk melihat statusnya
+
+```
+git status
+```
+
+<img src="image-21.png" width="700" height="400" />
+
+### 2. Menambahkan perubahan repositori ke staging index
+
+- Secara default saat menambah file baru, file tersebut tidak akan di track perubahannya, Gunakan perintah berikut untuk menambahkan ke staging index
+
+```
+git add .
+```
