@@ -98,6 +98,6 @@ sudo systemctl restart sshd
 
 - Uji coba dengan device lain, maka akan ditolak
 
-<img src="images/image-14.png" width="700" height="400" />
+<img src="images/image-14.jpg" width="700" height="400" />
 
 <img src="images/image-15.png" width="700" height="400" />
