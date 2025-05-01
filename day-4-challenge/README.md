@@ -38,5 +38,47 @@
 - Clone repositori dumbways-batch-23 ke direktori lokal
 
 ```
-git clone git@github.com:ghauzar/dumbways-batch-23.git backend-1
+git clone git@github.com:MTC0D3/dumbways-batch-23.git backend-1
 ```
+
+<img src="image-6.png" width="700" height="400" />
+
+- Masuk ke direktori backende-1 dan buat branch baru
+
+```
+cd backend-1
+```
+
+```
+git checkout -b hero
+```
+
+```
+git status
+```
+
+<img src="image-7.png" width="700" height="400" />
+
+- Buat perubahan pada salah satu file yang tersedia, misal file1
+
+```
+ls
+```
+
+```
+cat file1
+```
+
+```
+nano file1
+```
+
+```
+cat file1
+```
+
+```
+git status
+```
+
+<img src="image-8.png" width="700" height="400" />
