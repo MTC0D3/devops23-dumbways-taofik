@@ -17,49 +17,89 @@
 
 Note : Semua app bisa diakses dengan UFW enabled (firewall menyala abangkuh 🔥🔥🔥)
 
-## 📃 Pengertian Git
+## 📃 Deploy NodeJS di Ubuntu
 
-- Git adalah satu version control system yag memiliki fitur unggulan distributed version control yang artinya penyimpanan git tidak hanya berada dalam satu tempat saja melainkan semua orang yang terlibat dalam pengkodean proyek akan menyimpan database git, sehingga akan memudahkan dalam mengelola proyek baik online atau offline.
+- Install NodeJS dan download nvm melalui script bash berikut (URL Script):
 
-<img src="images/image.png" width="700" height="400" />
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
 
-### Perintah Dasar
+<img src="image.png" width="700" height="400" />
 
-| Perintah                | Fungsi                                                          |
-| :---------------------- | :-------------------------------------------------------------- |
-| `git init`              | Membuat repositori baru                                         |
-| `git clone <url>`       | Mengunduh repositori dari repositori server                     |
-| `git status`            | Melihat status file yang diubah atau belum di-commit            |
-| `git add <file>`        | Menambahkan file ke staging index                               |
-| `git commit -m "pesan"` | Menyimpan perubahan ke repositori lokal                         |
-| `git log`               | Melihat riwayat commit                                          |
-| `git restore <file>`    | Mengembalikan file ke versi terakhir dari commit terakhir       |
-| `git restore --staged`  | Menghapus file dari staging index, tapi tidak mengubah isi file |
+- Refresh bash dengan kode berikut
 
----
+```
+exec bash
+```
 
-### Remote
+<img src="image-1.png" width="700" height="400" />
 
-| Perintah                      | Fungsi                                            |
-| :---------------------------- | :------------------------------------------------ |
-| `git remote add origin <url>` | Menghubungkan repo lokal ke remote                |
-| `git push origin <branch>`    | Mengirim perubahan ke remote                      |
-| `git pull origin <branch>`    | Mengambil dan menggabungkan perubahan dari remote |
-| `git fetch`                   | Mengambil semua update dari remote tanpa merge    |
-| `git remote -v`               | Melihat daftar remote repositori                  |
+- Clone repository wayshub-frontend
 
----
+```
+git clone git@github.com:dumbwaysdev/wayshub-frontend.git
+```
 
-### Branching & Merging
+<img src="image-2.png" width="700" height="400" />
 
-| Perintah                 | Fungsi                                        |
-| :----------------------- | :-------------------------------------------- |
-| `git branch`             | Melihat daftar branch                         |
-| `git branch <nama>`      | Membuat branch baru                           |
-| `git checkout <branch>`  | Pindah ke branch tertentu                     |
-| `git checkout -b <nama>` | Membuat dan langsung berpindah ke branch baru |
-| `git merge <branch>`     | Menggabungkan branch ke branch aktif          |
-| `git rebase <branch>`    | Menyusun ulang riwayat commit                 |
+- Cek versi NodeJS, nvm, dan npm. Install Node 13 yang sesuai dengan project wayshub-frontend
+
+```
+cd wayshub-frontend
+```
+
+```
+ls
+```
+
+```
+node -v && nvm current && nvm -v
+```
+
+```
+nvm install 13
+```
+
+```
+node -v && nvm current && nvm -v
+```
+
+<img src="image-3.png" width="700" height="400" />
+
+- Jalankan server dengan perintah berikut
+
+```
+npm start
+```
+
+<img src="image-4.png" width="700" height="400" />
+
+**Catatan :** node_module belum ada, sehingga perlu menginstal beberapa modules terlebih dahulu.
+
+- Install modules
+
+```
+npm install
+```
+
+<img src="image-5.png" width="700" height="400" />
+
+- Setelah instal modules jalankan kembali server nya
+
+```
+npm start
+```
+
+<img src="image-6.png" width="700" height="400" />
+
+- Buka di browser dengan alamat <ip address>:3000
+
+```
+192.168.100.104:3000
+```
+
+<img src="image-7.png" width="700" height="400" />
 
 ## 📝 Membuat Repositori Github dan push ke Repositori
 
