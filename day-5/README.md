@@ -1,8 +1,21 @@
-# 📘 DevOps Task - Day 4
+# 📘 DevOps Task - Day 5
 
-- Penjelasan tentang git
-- Buat sebuah repository bernama "dumbways-batch-23" yang berisi 3 file
-- Manage repository tugas kalian (devops23-dumbways-<nama>) menggunakan terminal!
+### NodeJS
+
+- Deploy app wayshub-frontend
+- Berjalan di port 3000
+- Menggunakan NodeJS 13
+
+### Python
+
+- Deploy app menampilkan text nama kalian!
+- Berjalan di port 5000 & bisa dibuka melalui web
+
+### Golang
+
+- Deploy app menampilkan text "Golang geming!"
+
+Note : Semua app bisa diakses dengan UFW enabled (firewall menyala abangkuh 🔥🔥🔥)
 
 ## 📃 Pengertian Git
 
