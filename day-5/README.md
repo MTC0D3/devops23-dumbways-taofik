@@ -93,7 +93,7 @@ npm start
 
 <img src="image-6.png" width="700" height="400" />
 
-- Buka di browser dengan alamat <ip address>:3000
+- Buka di browser dengan alamat [ip address]:3000
 
 ```
 192.168.100.104:3000
