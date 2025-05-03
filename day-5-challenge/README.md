@@ -229,6 +229,18 @@ func main() {
 
 <img src="image.png" width="700" height="400" />
 
+- Cek apakah port yang akan digunakan sudah di izinkan
+
+```
+sudo ufw status
+```
+
+- Jika belum maka izinkan port dengan command berikut
+
+```
+sudo ufw allow 8080
+```
+
 - Kemudian, jalankan script dengan perintah
 
 ```
