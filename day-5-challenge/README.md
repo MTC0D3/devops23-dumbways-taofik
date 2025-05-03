@@ -251,4 +251,8 @@ go run website.go
 
 - Akses URL [ip address]:8080 di browser
 
+```
+192.168.100.104:8080
+```
+
 <img src="image-2.png" width="700" height="400" />
