@@ -1,4 +1,4 @@
-# 📘 DevOps Task - Day 5
+# 📘 DevOps Challenge - Day 5
 
 1. NodeJS + Python berjalan di background (tanpa kondisi attached di terminal)
 
