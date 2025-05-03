@@ -25,7 +25,7 @@ Note : Semua app bisa diakses dengan UFW enabled (firewall menyala abangkuh 🔥
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
-<img src="image.png" width="700" height="400" />
+<img src="images/image.png" width="700" height="400" />
 
 - Refresh bash dengan kode berikut
 
@@ -33,7 +33,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 exec bash
 ```
 
-<img src="image-1.png" width="700" height="400" />
+<img src="images/image-1.png" width="700" height="400" />
 
 - Clone repository wayshub-frontend
 
@@ -41,7 +41,7 @@ exec bash
 git clone git@github.com:dumbwaysdev/wayshub-frontend.git
 ```
 
-<img src="image-2.png" width="700" height="400" />
+<img src="images/image-2.png" width="700" height="400" />
 
 - Cek versi NodeJS, nvm, dan npm. Install Node 13 yang sesuai dengan project wayshub-frontend
 
@@ -65,7 +65,7 @@ nvm install 13
 node -v && nvm current && nvm -v
 ```
 
-<img src="image-3.png" width="700" height="400" />
+<img src="images/image-3.png" width="700" height="400" />
 
 - Jalankan server dengan perintah berikut
 
@@ -73,7 +73,7 @@ node -v && nvm current && nvm -v
 npm start
 ```
 
-<img src="image-4.png" width="700" height="400" />
+<img src="images/image-4.png" width="700" height="400" />
 
 **Catatan :** node_module belum ada, sehingga perlu menginstal beberapa modules terlebih dahulu.
 
@@ -83,7 +83,7 @@ npm start
 npm install
 ```
 
-<img src="image-5.png" width="700" height="400" />
+<img src="images/image-5.png" width="700" height="400" />
 
 - Setelah instal modules jalankan kembali server nya
 
@@ -91,7 +91,7 @@ npm install
 npm start
 ```
 
-<img src="image-6.png" width="700" height="400" />
+<img src="images/image-6.png" width="700" height="400" />
 
 - Buka di browser dengan alamat [ip address]:3000
 
@@ -99,7 +99,7 @@ npm start
 192.168.100.104:3000
 ```
 
-<img src="image-7.png" width="700" height="400" />
+<img src="images/image-7.png" width="700" height="400" />
 
 ## 📝 Deploy Python Flask di Ubuntu
 
@@ -109,7 +109,7 @@ npm start
 pyhton3 -V
 ```
 
-<img src="image-8.png" width="700" height="400" />
+<img src="images/image-8.png" width="700" height="400" />
 
 **Catatan :** Biasanya python sudah terinstall di ubuntu server
 
@@ -123,7 +123,7 @@ sudo apt install python3-pip
 pip -V
 ```
 
-<img src="image-9.png" width="700" height="400" />
+<img src="images/image-9.png" width="700" height="400" />
 
 - Install framework Flask yang digunakan untuk membuat aplikasi web pada Python
 
@@ -137,7 +137,7 @@ pip install flask
 pip list
 ```
 
-<img src="image-10.png" width="700" height="400" />
+<img src="images/image-10.png" width="700" height="400" />
 
 - Buat folder agar pengerjaan rapih (opsional)
 
@@ -149,7 +149,7 @@ mkdir latihan-python
 cd latihan-python
 ```
 
-<img src="image-11.png" width="700" height="400" />
+<img src="images/image-11.png" width="700" height="400" />
 
 - Buat sebuah file script python dengan nama index.py
 
@@ -171,7 +171,7 @@ def index():
 app.run(host='0.0.0.0', port=5000)
 ```
 
-<img src="image-12.png" width="700" height="400" />
+<img src="images/image-12.png" width="700" height="400" />
 
 - Cek apakah port yang akan digunakan sudah di izinkan
 
@@ -179,7 +179,7 @@ app.run(host='0.0.0.0', port=5000)
 sudo ufw status
 ```
 
-<img src="image-13.png" width="700" height="400" />
+<img src="images/image-13.png" width="700" height="400" />
 
 - Jika belum maka izinkan port dengan command berikut
 
@@ -193,7 +193,7 @@ sudo ufw allow 5000
 python3 index.py
 ```
 
-<img src="image-14.png" width="700" height="400" />
+<img src="images/image-14.png" width="700" height="400" />
 
 - Akses URL [ip address]:5000 di browser
 
@@ -201,7 +201,7 @@ python3 index.py
 192.168.100.104:5000
 ```
 
-<img src="image-15.png" width="700" height="400" />
+<img src="images/image-15.png" width="700" height="400" />
 
 ## ⚔️ Deploy app menampilkan text "Golang geming!"
 
@@ -215,7 +215,7 @@ mkdir latihan-golang
 cd latihan-golang
 ```
 
-<img src="image-16.png" width="700" height="400" />
+<img src="images/image-16.png" width="700" height="400" />
 
 - Unduh instalasi Golang dari link ini
 
@@ -227,7 +227,7 @@ wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 ls
 ```
 
-<img src="image-17.png" width="700" height="400" />
+<img src="images/image-17.png" width="700" height="400" />
 
 - Masuk ke mode root untuk mengupgrade Golang secara manual dengan command berikut
 
@@ -243,7 +243,7 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
 exit
 ```
 
-<img src="image-18.png" width="700" height="400" />
+<img src="images/image-18.png" width="700" height="400" />
 
 - Menambahkan direktori /usr/local/go/bin ke dalam variabel lingkungan PATH
 
@@ -251,7 +251,7 @@ exit
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-<img src="image-19.png" width="700" height="400" />
+<img src="images/image-19.png" width="700" height="400" />
 
 - Cek apakah Golang sukses di instal dengan memeriksa versinya
 
@@ -259,7 +259,7 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 ```
 
-<img src="image-20.png" width="700" height="400" />
+<img src="images/image-20.png" width="700" height="400" />
 
 - Buat file script bernama index.go
 
@@ -281,7 +281,7 @@ func main() {
 }
 ```
 
-<img src="image-21.png" width="700" height="400" />
+<img src="images/image-21.png" width="700" height="400" />
 
 - Jalankan script Golang dengan command berikut
 
@@ -289,4 +289,4 @@ func main() {
 go run index.go
 ```
 
-<img src="image-22.png" width="700" height="400" />
+<img src="images/image-22.png" width="700" height="400" />
