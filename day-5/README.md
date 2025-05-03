@@ -101,243 +101,192 @@ npm start
 
 <img src="image-7.png" width="700" height="400" />
 
-## 📝 Membuat Repositori Github dan push ke Repositori
+## 📝 Deploy Python Flask di Ubuntu
 
-### 1. Konfigurasi username dan email untuk akun Github
-
-- Gunakan perintah berikut untuk melakukan konfigurasi
+- Cek paket python dan versi nya
 
 ```
-git config --global user.name <username>
-git config --global user.email "<email>"
-git config --list
+pyhton3 -V
 ```
 
-<img src="images/image-1.png" width="700" height="400" />
+<img src="image-8.png" width="700" height="400" />
 
-### 2. Cek apakah Public Key dan Private Key sudah ada
+**Catatan :** Biasanya python sudah terinstall di ubuntu server
 
-- Lakukan pengecekan apakah public key dan private key sudah ada dengan perintah berikut
+- Install pip sebagai package manager dari Python
 
 ```
-cd .ssh
+sudo apt install python3-pip
+```
+
+```
+pip -V
+```
+
+<img src="image-9.png" width="700" height="400" />
+
+- Install framework Flask yang digunakan untuk membuat aplikasi web pada Python
+
+```
+pip install flask
+```
+
+- Memastikan Flask sudah terinstal
+
+```
+pip list
+```
+
+<img src="image-10.png" width="700" height="400" />
+
+- Buat folder agar pengerjaan rapih (opsional)
+
+```
+mkdir latihan-python
+```
+
+```
+cd latihan-python
+```
+
+<img src="image-11.png" width="700" height="400" />
+
+- Buat sebuah file script python dengan nama index.py
+
+```
+nano index.py
+```
+
+- Masukkan snippet kode berikut
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Muhammad Taofik'
+
+app.run(host='0.0.0.0', port=5000)
+```
+
+<img src="image-12.png" width="700" height="400" />
+
+- Cek apakah port yang akan digunakan sudah di izinkan
+
+```
+sudo ufw status
+```
+
+<img src="image-13.png" width="700" height="400" />
+
+- Jika belum maka izinkan port dengan command berikut
+
+```
+sudo ufw allow 5000
+```
+
+- Kemudian, jalankan server dengan mengeksekusi command berikut
+
+```
+python3 index.py
+```
+
+<img src="image-14.png" width="700" height="400" />
+
+- Akses URL [ip address]:5000 di browser
+
+```
+192.168.100.104:5000
+```
+
+<img src="image-15.png" width="700" height="400" />
+
+## ⚔️ Deploy app menampilkan text "Golang geming!"
+
+- Buat direktori latihan-golang dan pindah ke direktori tersebut
+
+```
+mkdir latihan-golang
+```
+
+```
+cd latihan-golang
+```
+
+<img src="image-16.png" width="700" height="400" />
+
+- Unduh instalasi Golang dari link ini
+
+```
+wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+```
+
+```
 ls
 ```
 
-<img src="images/image-2.png" width="700" height="400" />
+<img src="image-17.png" width="700" height="400" />
 
-### 3. Buat pasangan Public Key dan Private Key (Jika belum ada)
-
-- Buatlah pasangan public key dan private key jika belum ada dengan perintah berikut
+- Masuk ke mode root untuk mengupgrade Golang secara manual dengan command berikut
 
 ```
-ssh-keygen
+sudo su
 ```
 
-### 4. Salin Public key
-
-- Tampilkan isi file id_rsa.pub dan salin dengan perintah berikut
-
 ```
-cat id_rsa.pub
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
 ```
 
-<img src="images/image-3.png" width="700" height="400" />
-
-### 5. Konfigurasi di github
-
-- Masuk ke menu settings pilih tab SSH and GPG keys
-
-<img src="images/image-4.png" width="700" height="400" />
-
-- Pilih new SSH kemudian masukan title dan masukan public key di form key kemudian klik add SSH key
-
-<img src="images/image-5.png" width="700" height="400" />
-
-- Github akan mengonfirmasi dengan meminta password login akun Github, mengisi password dan tekan Confirm
-
-- Maka SSH Key berhasil ditambahkan ke akun Github
-
-- Uji koneksi dari terminal SSH ke server Github dengan perintah berikut
-
 ```
-ssh git@github.com -T
+exit
 ```
 
-Jika muncul pesan seperti berikut maka koneksi berhasil
+<img src="image-18.png" width="700" height="400" />
 
-<img src="images/image-6.png" width="700" height="400" />
-
-### 6. Buat direktori dan beberapa file (Opsional)
-
-- Buatlah sebuah direktori dan beberapa file dengan perintah berikut
+- Menambahkan direktori /usr/local/go/bin ke dalam variabel lingkungan PATH
 
 ```
-mkdir day-4
-cd day-4
-echo "Hai Taofik" > file1
-"Semangat yaa" > file2
-echo "Bisa koo" > file3
-ls
+export PATH=$PATH:/usr/local/go/bin
 ```
 
-<img src="images/image-7.png" width="700" height="400" />
+<img src="image-19.png" width="700" height="400" />
 
-### 7. Buat repositori lokal baru dengan nama "dumbways-batch-23"
-
-- Gunakan perintah berikut untuk membuat repositori lokal
+- Cek apakah Golang sukses di instal dengan memeriksa versinya
 
 ```
-git init dumbways-batch-23
+go version
 ```
 
-<img src="images/image-8.png" width="700" height="400" />
+<img src="image-20.png" width="700" height="400" />
 
-### 8. Pindahkan file1, file2, dan file3 ke direktori "dumbways-batch-23"
-
-- Gunakan perintah berikut untuk memindahkan file
+- Buat file script bernama index.go
 
 ```
-mv file1 dumbways-batch-23
-mv file2 dumbways-batch-23
-mv file3 dumbways-batch-23
+nano index.go
 ```
 
-<img src="images/image-9.png" width="700" height="400" />
-
-### 9. Membuat .gitignore untuk menyimpan file atau direktori yang akan diabaikan git
-
-- Buat file .gitignore dengan perintah berikut
+- Masukkan snippet kode berikut
 
 ```
-nano .gitignore
+package main
+
+import (
+        "fmt"
+)
+
+func main() {
+        fmt.Println("Golang geming!")
+}
 ```
 
-<img src="images/image-11.png" width="700" height="400" />
+<img src="image-21.png" width="700" height="400" />
 
-<img src="images/image-10.png" width="700" height="400" />
-
-### 10. Menambahkan perubahan repositori ke staging index
-
-- Gunakan perintah berikut untuk menambahkan perubahan repo kita ke staging index
+- Jalankan script Golang dengan command berikut
 
 ```
-git add .
-git status
+go run index.go
 ```
 
-<img src="images/image-12.png" width="700" height="400" />
-
-### 11. Melakukan commit dan memberikan pesan "First commit"
-
-- Gunakan perintah berikut untuk menyimpan projek ke repo lokal dan menambahkan pesan
-
-```
-git commit -m "First commit"
-```
-
-<img src="images/image-13.png" width="700" height="400" />
-
-### 12. Restore repositori
-
-- Jika ingin mengembalikan atau merubah isi file sebelum di commit sesuai dengan sebelumnya gunakan git restore
-
-```
-git restore file1
-```
-
-<img src="images/image-14.png" width="700" height="400" />
-
-### 13. Buat repositori baru di Github
-
-- Buat repositori dengan nama yang sama seperti di repo lokal yaitu "dumbways-batch-23"
-
-<img src="images/image-15.png" width="700" height="400" />
-
-### 14. Menghubungkan repo Github dengan repo lokal
-
-- Remote sesuai link dan pastikan memilih SSH di atas sebab perubahan akan dikirim ke repositori Github menggunakan command SSH
-
-```
-git remote add origin git@github.com:MTC0D3/dumbways-batch-23.git
-```
-
-<img src="images/image-16.png" width="700" height="400" />
-
-<img src="images/image-17.png" width="700" height="400" />
-
-- Jika ingin mengganti branch yang tersedia, dapat menggunakan command berikut:
-
-```
-git branch -M <branch>
-```
-
-<img src="images/image-18.png" width="700" height="400" />
-
-### 15. Mengirim perubahan ke repositori Github
-
-- Gunakan perintah berikut untuk mengirim perubahan
-
-```
-git push -u origin master
-```
-
-<img src="images/image-19.png" width="700" height="400" />
-
-### 16. Maka sudah terjadi perubahan di repositori Github "dumbways-batch-23"
-
-<img src="images/image-20.png" width="700" height="400" />
-
-## ⚔️ Manage repository menggunakan terminal
-
-### The Three States
-
-- Git memiliki tiga state terhadap file kita: modified, staged dan committed
-- Modified artinya kita mengubah (menambah, mengedit, menghapus) file, namun belum disimpan secara permanen ke repository
-- Staged artinya kita menandai modifikasi yang kita lakukan terhadap file akan disimpan secara permanen ke repository
-- Committed artinya data sudah aman disimpan di repository
-
-### 1. Memeriksa status dari repositori lokal
-
-- Gunakan perintah berikut untuk melihat statusnya
-
-```
-git status
-```
-
-<img src="images/image-21.png" width="700" height="400" />
-
-### 2. Menambahkan perubahan repositori ke staging index
-
-- Gunakan perintah berikut untuk menambahkan ke staging index
-
-```
-git add .
-```
-
-<img src="images/image-22.png" width="700" height="400" />
-
-### 3. Melakukan commit dan memberikan pesan
-
-- Gunakan perintah berikut untuk melakukan commit
-
-```
-git commit -m "Update Readme.md task day-4"
-```
-
-<img src="images/image-23.png" width="700" height="400" />
-
-### 4. Mengirim perubahan ke repositori Github
-
-- Gunakan perintah berikut untuk mengirim perubahan
-
-```
-git push
-```
-
-**Catatan :**
-
-- Saya telah menggunakan -u singkatan dari --set-upstream sebelumnya, artinya:
-- Sudah di atur supaya next time kamu tinggal ketik git push atau git pull tanpa harus sebut nama branch lagi, karena Git udah tahu branch lokal ini terhubung ke branch master di remote origin.
-
-<img src="images/image-24.png" width="700" height="400" />
+<img src="image-22.png" width="700" height="400" />
