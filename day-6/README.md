@@ -70,6 +70,19 @@ taofik.xyz
 sudo nano /etc/nginx/sites-enabled/taofik.conf
 ```
 
+```
+    server {
+        listen 80;
+        server_name taofik.xyz;  # Your domain
+
+        location / {
+            proxy_pass http://192.168.100.104:3000;  # Forward to WaysHub
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+```
+
 <img src="image-7.png" width="700" height="400" />
 
 - Tes konfigurasi nginx dan restart nginx
