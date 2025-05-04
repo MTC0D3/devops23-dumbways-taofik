@@ -64,7 +64,7 @@ taofik.xyz
 
 <img src="image-6.png" width="700" height="400" />
 
-- Buat file untuk konfigurasi di sites-available
+- Buat file untuk konfigurasi di sites-enabled
 
 ```
 sudo nano /etc/nginx/sites-enabled/taofik.conf
