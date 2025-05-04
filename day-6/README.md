@@ -42,6 +42,10 @@ sudo apt install nginx
 
 - Cek status nginx running atau tidak
 
+```
+sudo systemctl status nginx
+```
+
 <img src="image-4.png" width="700" height="400" />
 
 - Cek port http (80) apakah sudah dizinkan atau belum
