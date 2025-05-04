@@ -6,6 +6,36 @@
 
 ## 📃 Gambarkan sturktur web server menggunakan reverse proxy dan jelaskan cara kerjanya!
 
+<img src="images/image-11.png" width="700" height="400" />
+
+### Apa itu reverse proxy ?
+
+- Simpelnya Reverse proxy adalah perantara antara pengguna dan server aplikasi. Ia menerima permintaan dari pengguna, meneruskannya ke server sebenarnya, lalu mengembalikan hasilnya ke pengguna seolah-olah dialah servernya.
+
+### Cara kerja
+
+1. Client membuat permintaan
+
+- Pengguna (misalnya lewat browser) mengakses suatu domain, contohnya buka taofik.xyz di browser
+
+2. Permintaan diterima oleh reverse proxy
+
+- Reverse proxy (seperti Nginx atau Apache) menerima permintaan ini terlebih dahulu bukan langsung ke server aplikasi
+
+3. Reverse proxy meneruskan ke server internal
+
+- Reverse proxy melihat permintaan itu, lalu meneruskannya ke server aplikasi yang sesuai, misalnya ke localhost:3000 atau localhost:5000
+
+4. Server aplikasi memproses permintaan
+
+- Server aplikasi memproses permintaan (misalnya generate halaman web atau ambil data dari database), lalu memberikan responsnya kembali ke reverse proxy
+
+5. Reverse proxy mengembalikan hasil ke client
+
+- Reverse proxy menerima respons dari server aplikasi, lalu mengirimkannya ke pengguna (browser).
+
+**Catatan:** Jadi, client tidak tahu bahwa ada server lain di balik reverse proxy semuanya tampak seperti dari satu alamat saja.
+
 ## ⚔️ Buatlah Reverse Proxy untuk aplilkasi yang sudah kalian deploy kemarin. (wayshub), untuk domain nya sesuaikan nama masing" ex: alvin.xyz .
 
 - Buka direktori windows
@@ -14,7 +44,7 @@
 C:\Windows\System32\drivers\etc
 ```
 
-<img src="image.png" width="700" height="400" />
+<img src="images/image.png" width="700" height="400" />
 
 - Edit hosts dengan notepad++ sebagai admin
 
@@ -22,7 +52,7 @@ C:\Windows\System32\drivers\etc
 192.168.100.200 taofik.xyz
 ```
 
-<img src="image-1.png" width="700" height="400" />
+<img src="images/image-1.png" width="700" height="400" />
 
 - Buka terminal akses server dan run wayshub-frontend
 
@@ -30,7 +60,7 @@ C:\Windows\System32\drivers\etc
 ssh vm-dumbways
 ```
 
-<img src="image-2.png" width="700" height="400" />
+<img src="images/image-2.png" width="700" height="400" />
 
 - Install nginx (jika belum ada)
 
@@ -38,7 +68,7 @@ ssh vm-dumbways
 sudo apt install nginx
 ```
 
-<img src="image-3.png" width="700" height="400" />
+<img src="images/image-3.png" width="700" height="400" />
 
 - Cek status nginx running atau tidak
 
@@ -46,7 +76,7 @@ sudo apt install nginx
 sudo systemctl status nginx
 ```
 
-<img src="image-4.png" width="700" height="400" />
+<img src="images/image-4.png" width="700" height="400" />
 
 - Cek port http (80) apakah sudah dizinkan atau belum
 
@@ -54,7 +84,7 @@ sudo systemctl status nginx
 sudo ufw status
 ```
 
-<img src="image-5.png" width="700" height="400" />
+<img src="images/image-5.png" width="700" height="400" />
 
 - Cek di browser apakah domain sudah bisa digunakan
 
@@ -62,7 +92,7 @@ sudo ufw status
 taofik.xyz
 ```
 
-<img src="image-6.png" width="700" height="400" />
+<img src="images/image-6.png" width="700" height="400" />
 
 - Buat file untuk konfigurasi di sites-enabled
 
@@ -83,7 +113,7 @@ sudo nano /etc/nginx/sites-enabled/taofik.conf
     }
 ```
 
-<img src="image-7.png" width="700" height="400" />
+<img src="images/image-7.png" width="700" height="400" />
 
 - Tes konfigurasi nginx dan restart nginx
 
@@ -99,7 +129,7 @@ sudo systemctl restart nginx
 sudo systemctl status nginx
 ```
 
-<img src="image-8.png" width="700" height="400" />
+<img src="images/image-8.png" width="700" height="400" />
 
 - Jalankan project wayshub-frontend
 
@@ -111,7 +141,7 @@ use nvm 13
 npm start
 ```
 
-<img src="image-9.png" width="700" height="400" />
+<img src="images/image-9.png" width="700" height="400" />
 
 - Cek kembali di browser dengan menggunakan domain yang dibuat
 
@@ -119,4 +149,4 @@ npm start
 taofik.xyz
 ```
 
-<img src="image-10.png" width="700" height="400" />
+<img src="images/image-10.png" width="700" height="400" />
