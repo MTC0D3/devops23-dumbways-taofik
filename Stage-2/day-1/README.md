@@ -1,4 +1,4 @@
-# 📘 DevOps Task - Day 6
+# 📘 DevOps Task - Day 1
 
 - Deploy aplikasi wayshub dengan backend dan frontend yang berjalan (bisa register, datanya ada di database)
 
