@@ -350,7 +350,7 @@ docker build -t wayshub-fe .
 1. Kembali ke folder home, lalu buat file baru dengan nama docker-compose.yaml
 
 ```
-cd && nano docker-compose.yaml
+nano docker-compose.yaml
 ```
 
 2. Masukan script berikut
