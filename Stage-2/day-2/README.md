@@ -468,3 +468,118 @@ docker push mtc0d3/wayshub-db:latest
 ```
 
 6. Maka repositori public telah terbuat dan image sudah di push
+
+## Web Server on top Docker
+
+1. Ke directory home alu buat file docker-compose.yaml. Isi dengan script berikut
+
+```
+version: '3.8'
+
+services:
+
+  webserver:
+    container_name: webserver
+    image: nginx:latest
+    ports:
+        - "80:80"
+        - "443:443"
+    restart: always
+    volumes:
+        - ./nginx/conf:/etc/nginx/conf.d
+        - ./certbot/www/:/var/www/certbot
+        - ./certbot/conf/:/etc/letsencrypt
+    depends_on:
+        - certbot
+    networks:
+      - herta
+
+  certbot:
+    container_name: certbot
+    image: certbot/dns-cloudflare:latest
+    volumes:
+      - ./certbot/certbot.ini:/etc/letsencrypt/renewal/renewal.conf:ro
+      - ./certbot/www/:/var/www/certbot
+      - ./certbot/conf/:/etc/letsencrypt
+    networks:
+      - herta
+
+networks:
+ herta:
+```
+
+2. Buat folder baru bernama certbot lalu buat file baru didalamnya dengan nama certbot.ini
+
+```
+mkdir certbot; cd certbot; nano certbot.ini
+```
+
+3. Masukkan email(opsional) dan apikey dari cloudflare ke dalam file certbot.ini
+
+```
+dns_cloudflare_email = "youremail@example.com"
+dns_cloudflare_api_key = "your_api_key"
+```
+
+4. Lalu lakukan chmod ke file certbot.ini
+
+```
+sudo chmod 400 certbot.ini
+```
+
+5. Selanjutnya buat folder baru bernama nginx dan buat lagi didalamnya bernama conf, lalu didalam folder tersebut buat file dengan nama bebas berextensi .conf
+
+```
+mkdir nginx; cd nginx; mkdir conf; cd conf; nano taofik.conf
+```
+
+6. Simpan script ini didalamnya
+
+```
+server {
+        server_name taofik.studentdumbways.my.id;
+
+        listen 443 ssl;
+        ssl_certificate /etc/letsencrypt/live/taofik.studentdumbways.my.id/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/taofik.studentdumbways.my.id/privkey.pem;
+
+        location / {
+               proxy_pass http://103.175.221.143:3000;
+        }
+}
+server {
+        server_name api.taofik.studentdumbways.my.id;
+
+        listen 443 ssl;
+        ssl_certificate /etc/letsencrypt/live/taofik.studentdumbways.my.id/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/taofik.studentdumbways.my.id/privkey.pem;
+
+        location / {
+               proxy_pass http://103.175.221.143:5000;
+        }
+}
+```
+
+7. Selanjutnya jalankan docker compose
+
+```
+cd && docker compose up -d
+```
+
+8. Lalu Generate SSL Certificate
+
+```
+docker compose run --rm certbot certonly --dns-cloudflare
+```
+
+9. ketika diminta nama domain, Masukkan namadomain.com, *.namadomain.com.
+
+10. Jika diminta file .ini, masukkan: /etc/letsencrypt/renewal/renewal.conf
+
+11. Jika selesai, lakukan reload nginx
+
+```
+docker compose exec webserver nginx -s reload
+```
+
+12. Lalu akses menggunakan browser
