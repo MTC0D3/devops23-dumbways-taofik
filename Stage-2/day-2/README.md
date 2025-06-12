@@ -572,9 +572,9 @@ cd && docker compose up -d
 docker compose run --rm certbot certonly --dns-cloudflare
 ```
 
-9. ketika diminta nama domain, Masukkan namadomain.com, *.namadomain.com.
+9. ketika diminta nama domain, Masukkan `namadomain.com, *.namadomain.com`
 
-10. Jika diminta file .ini, masukkan: /etc/letsencrypt/renewal/renewal.conf
+10. Jika diminta file .ini, masukkan: `/etc/letsencrypt/renewal/renewal.conf`
 
 11. Jika selesai, lakukan reload nginx
 
