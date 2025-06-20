@@ -1,0 +1,7 @@
+FROM mysql:8.0
+LABEL project="Wayshub"
+LABEL author="mtc0d3"
+
+EXPOSE 3306
+
+CMD ["mysqld", "--default-authentication-plugin=mysql_native_password"]
