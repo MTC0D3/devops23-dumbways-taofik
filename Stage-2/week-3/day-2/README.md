@@ -1,4 +1,4 @@
-# 📘 DevOps Task - Day 1
+# 📘 DevOps Task - Day 2
 
 - Membuat konfigurasi ansible untuk :
     - Install docker
