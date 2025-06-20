@@ -1,6 +1,6 @@
 # 📘 DevOps Task - Day 1
 
-Membuat konfigurasi ansible untuk :
+- Membuat konfigurasi ansible untuk :
     - Install docker
     - membuat user baru (nama user mentor) dengan home
     - Menjalankan aplikasi wayshub (frontend+backend+db dengan compose docker)
