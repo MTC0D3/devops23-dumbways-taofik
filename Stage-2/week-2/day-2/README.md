@@ -1,585 +1,462 @@
-# 📘 DevOps Task - Day 2
+# 📘 DevOps Task - Day 3
 
-- Rebuild ulang server BiznetGio kalian, lalu gunakan username "dumbways" yang kalian gunakan bersama, pastikan menggunakan login melalui ssh-key dan bukan password. (1 key untuk semua akan menjadi bonus) 
+- Reverse Proxy Jenkins
+  - gunakan domain ex. pipeline-team.studentdumbways.my.id
+- Buatlah beberapa Job untuk aplikasi kalian
+  - Job Frontend
+  - Job Backend
+- Buat Jenkinsfile dengan proses seperti ini :
+     - Pull dari repository
+     - Dockerize/Build aplikasi kita
+     - Test application
+     - Deploy aplikasi on top Docker
+     - Push ke Docker Hub
+- Auto trigger setiap ada perubahan di SCM (setiap repository berubah, otomatis menjalankan build)
 
-- Deploy aplikasi Web Server, Frontend, Backend, serta Database on top `docker compose`
+## 📃 CICD dengan Jenkins
 
-- Di dalam docker-compose file buat suatu custom network dengan nama **team kalian**, lalu pasang ke setiap service yang kalian miliki. (Nilai Bonus)
+1. Langkah pertama yaitu buat folder baru bernama jenkins. Lalu masuk ke dalam folder tersebut dan buat file baru bernama docker-compose.yaml
 
-  - Untuk Web Server buatlah configurasi reverse-proxy menggunakan nginx on top docker.
-    - **SSL CLOUDFLARE OFF!!!**
-    - Gunakan docker volume untuk membuat reverse proxy
-    - SSL sebisa mungkin gunakan wildcard
-    - Untuk DNS bisa sesuaikan seperti contoh di bawah ini
-      - Frontend team.studentdumbways.my.id
-      - Backend api.team.studentdumbways.my.id
-  - Push image ke docker registry kalian masing".
-- Aplikasi dapat berjalan dengan sesuai seperti melakukan login/register.
-
-## 📃 Rebuild Server Biznet
-
-1. Pertama login ke akun biznet gio cloud dan akses dashboard nya
-
-2. Pilih server yang ingin di rebuild
-
-3. Lalu stop dulu server yang ingin di rebuild 
-
-4. Lalu klik rebuild 
-
-5. Pilih os yang ingin digunakan, lalu confirm 
-
-6. Jika sudah benar, Klik Rebuild
-
-7. Tunggu sampai proses rebuild selesai, lakukan Refresh secara berkala. Jika sudah berhasil statusnya akan menjadi Active
-
-![alt text](image.png)
-
-## Buat User Baru
-
-1. Jika sudah aktif, konek ke server menggunakan SSH. Lalu buat user baru.
-
-```
-sudo adduser herta
-```
-
-2. Buat user ini jadi sudoers
-
-```
-sudo usermod -aG sudo herta
-```
-
-3. Lalu akses user baru tersebut 
-
-```
-su - herta
-```
-
-4. Generate sshkey dengan menggunakan command berikut:
-
-```
-ssh-keygen
-```
-
-5. Copy isi file dari id_rsa.pub
-
-6. Pastekan pada file authorized_keys, jika tidak ada buat manual
-
-7. Copy isi file id_rsa.
-
-8. Pastekan ke local machine dengan membuat file baru
-
-![alt text](image-1.png)
-
-9. Lakukan chmod.
-
-```
-chmod 400 herta.pem
-```
-
-10. Login SSH menggunakan sshkey tadi.
-
-```
-ssh herta@103.175.221.143
-```
-
-11. Lakukan konfigurasi pada file konfigurasi SSH
-
-```
-sudo nano /etc/ssh/sshd_config
-```
-
-12. Atur parameter sebagai berikut. Setelah selesai simpan file tersebut.
-
-```
-PubkeyAuthentication yes
-PasswordAuthentication no
-```
-
-13. Restart SSH service pada terminal
-
-```
-sudo systemctl restart sshd
-```
-14. Disconnect SSH dengan mengetikkan "exit" atau ctrl + d di terminal dan coba login ke Server dengan passwor
-
-15. Server menolak login menggunakan password dan login hanya bisa menggunakan Public Key
-
-![alt text](image-2.png)
-
-16. Untuk login gunakan perintah 
-
-```
-ssh -i herta-key.pem herta@103.175.221.143
-```
-
-## Installasi Docker Engine
-
-1. Buka dokumentasi docker engine https://docs.docker.com/engine/install/ubuntu/
-
-2. jika kamu gunakan docker versi lama kamu bisa uninstall dengan perintah berikut (direkomendasikan)
-
-```
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-
-3. Ikuti semua langkah 1 per 1 untuk Install using the apt repository
-
-```
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-```
-
-4. Install the Docker packages
-
-```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-5. Untuk regular user kita harus menambahkan nya ke group docker
-
-```
-sudo usermod -aG docker $USER
-```
-
-6. Jalankan perintah berikut untuk mengaktifkan perubahan pada grup.
-
-```
-newgrp docker
-```
-
-## Deploy aplikasi Web Server, Frontend, Backend, serta Database on top `docker compose`
-
-### Buat image database mysql
-
-1. Buat folder wayshub-database
-
-```
-mkdir wayshub-database
-```
-
-2. Buat file Dockerfile
-
-```
-FROM mysql:8.0
-LABEL project="Wayshub"
-LABEL author="mtc0d3"
-
-EXPOSE 3306
-
-CMD ["mysqld", "--default-authentication-plugin=mysql_native_password"]
-```
-
-3. Selanjutnya build dengan menjalankan command berikut. Tunggu sampai proses selesai.
-
-```
-docker build -t wayshub-db .
-```
-
-4. Cek list image dengan perintah berikut
-
-```
-docker images
-```
-
-### Buat image backend
-
-1. Clone repo wayshub-backend
-
-```
-git clone https://github.com/dumbwaysdev/wayshub-backend.git
-```
-
-2. Masuk ke folder wayshub-backed
-
-```
-cd wayshub-backed
-```
-
-3. Edit file config/config.json, Lalu ganti sesuai dengan settingan database yang nanti akan dibuat
-
-```
-nano config/config.json
-```
-
-```
-{
-  "development": {
-    "username": "user",
-    "password": "password",
-    "database": "wayshub",
-    "host": "database",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
-```
-
-4. Buat file dengan nama Dockerfile
-
-```
-FROM node:13-alpine
-
-WORKDIR /wayshub-backend
-
-COPY . .
-
-RUN npm install && \
-    npm install -g pm2@4.4.0 sequelize-cli
-
-EXPOSE 5000
-```
-
-5. Buat file baru lagi dengan nama ecosystem.config.js
-
-```
-module.exports = {
-  apps: [
-    {
-      name: 'wayshub-backend',
-      script: 'npm',
-      args: ['run', 'start'],
-    }
-  ]
-};
-```
-
-6. Selanjutnya build dengan menjalankan command berikut. Tunggu sampai proses selesai.
-
-```
-docker build -t wayshub-be .
-```
-
-### Buat image frontend
-
-1. Clone repo wayshub-frontend
-
-```
-https://github.com/dumbwaysdev/wayshub-frontend
-```
-
-2. Masuk ke folder wayshub-frontend
-
-```
-cd wayshub-frontend
-```
-
-3. Edit file /src/config/api.js, ubah baseURL dengan dns backend
-
-```
-import axios from 'axios';
-
-const API = axios.create({
-    baseURL: "https://api.taofik.studentdumbways.my.id/api/v1"
-});
-
-const setAuthToken = (token) => {
-    if(token){
-        API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    } else {
-        delete API.defaults.headers.common['Authorization'];
-    }
-}
-
-export {
-    API,
-    setAuthToken
-}
-```
-
-4. Buat file dengan nama Dockerfile
-
-```
-FROM node:13-alpine
-
-WORKDIR /wayshub-frontend
-
-COPY . .
-
-RUN npm install && \
-    npm install -g pm2@4.4.0
-
-EXPOSE 3000
-```
-
-5. Buat file baru lagi dengan nama ecosystem.config.js
-
-```
-module.exports = {
-  apps: [
-    {
-      name: 'wayshub-frontend',
-      script: 'npm',
-      args: ['run', 'start'],
-    }
-  ]
-};
-```
-
-6. Selanjutnya build dengan menjalankan command berikut. Tunggu sampai proses selesai.
-
-```
-docker build -t wayshub-fe .
-```
-
-### Buat docker compose
-
-1. Kembali ke folder home, lalu buat file baru dengan nama docker-compose.yaml
-
 ```
-nano docker-compose.yaml
+mkdir jenkins; cd jenkins; nano docker-compose.yaml;
 ```
 
-2. Masukan script berikut
+2. Masukkan script ini kedalamnya
 
 ```
 version: '3.8'
 
 services:
-  database:
-    image: wayshub-db
-    container_name: wayshub-db
-    restart: always
-    networks:
-      - herta
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: wayshub
+  jenkins:
+    image: jenkins/jenkins:lts
     ports:
-      - "3306:3306"
+      - "8080:8080"
+      - "50000:50000"
     volumes:
-      - mysql-data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      timeout: 5s
-      retries: 10
-
-  backend:
-    image: wayshub-be
-    container_name: wayshub-be
-    restart: always
-    depends_on:
-      database:
-        condition: service_healthy
-    networks:
-      - herta
-    environment:
-      DB_HOST: database
-      DB_USER: user
-      DB_PASSWORD: password
-      DB_NAME: wayshub
-    ports:
-      - "5000:5000"
-    command: >
-      sh -c "
-      npx sequelize db:create &&
-      npx sequelize db:migrate &&
-      pm2-runtime ecosystem.config.js
-      "
-
-  frontend:
-    image: wayshub-fe
-    container_name: wayshub-fe
-    restart: always
-    depends_on:
-      - backend
-    networks:
-      - herta
-    stdin_open: true
-    ports:
-      - "3000:3000"
-    command: >
-      sh -c "
-      pm2-runtime ecosystem.config.js
-      "
+      - jenkins_data:/var/jenkins_home
+    restart: unless-stopped
 
 volumes:
-  mysql-data:
-
-networks:
-  herta:
+  jenkins_data:
 ```
 
-3. Jika sudah disimpan, Jalankan command berikut
+3. Selanjutnya jalankan command berikut
 
 ```
 docker compose up -d
 ```
 
-## Push image ke Docker Hub
-
-1. Buat akun di docker hub
-
-2. Untuk push image kita ke docker hub harus ada penambahan nama user docker hub kita
+4. Jika sudah, cek apakah jenkins berjalan
 
 ```
-# awalnya
-wayshub-db
-
-# menjadi
-mtc0d3/wayshub-db
+docker compose ps -a
 ```
 
-3. Lakukan build ulang
+5. Akses servernya menggunakan browser dengan menggunakan ip address dan port 8080
 
 ```
-docker build -t mtc0d3/wayshub-db .
+<ip address>:8080
 ```
 
-4. Lalu gunakan perintah berikut untuk login dari docker engine
+6. Selanjutnya, masuk ke bash dari jenkins
 
 ```
-docker login -u mtc0d3 
-
-# masukan password 
-
-# maka login akan sukses
+docker exec -it jenkins-jenkins-1 bash
 ```
 
-5. lalu push image ke docker dengan printah
+7. Lalu jalankan command berikut
 
 ```
-docker push mtc0d3/wayshub-db:latest
+cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-6. Maka repositori public telah terbuat dan image sudah di push
+8. Copy paste password tersebut ke browser tadi, lalu klik continue
 
-## Web Server on top Docker
+9. Pilih yang install suggested plugins
 
-1. Ke directory home alu buat file docker-compose.yaml. Isi dengan script berikut
+10. Lalu tunggu sampai proses setup selesai
 
-```
-version: '3.8'
+11. Selanjutnya, buat akun admin
 
-services:
+12. Klik Save and Finish
 
-  webserver:
-    container_name: webserver
-    image: nginx:latest
-    ports:
-        - "80:80"
-        - "443:443"
-    restart: always
-    volumes:
-        - ./nginx/conf:/etc/nginx/conf.d
-        - ./certbot/www/:/var/www/certbot
-        - ./certbot/conf/:/etc/letsencrypt
-    depends_on:
-        - certbot
-    networks:
-      - herta
-
-  certbot:
-    container_name: certbot
-    image: certbot/dns-cloudflare:latest
-    volumes:
-      - ./certbot/certbot.ini:/etc/letsencrypt/renewal/renewal.conf:ro
-      - ./certbot/www/:/var/www/certbot
-      - ./certbot/conf/:/etc/letsencrypt
-    networks:
-      - herta
-
-networks:
- herta:
-```
-
-2. Buat folder baru bernama certbot lalu buat file baru didalamnya dengan nama certbot.ini
+13. Selanjutnya, masuk ke cloudflare dan buat subdomain baru dengan mempointing ke ip webserver
 
 ```
-mkdir certbot; cd certbot; nano certbot.ini
+pipeline.taofik.studentdumbways.my.id
 ```
 
-3. Masukkan email(opsional) dan apikey dari cloudflare ke dalam file certbot.ini
+14. Di webserver pada path nginx/conf, buat konfigurasi baru untuk subdomain jenkins
 
 ```
-dns_cloudflare_email = "youremail@example.com"
-dns_cloudflare_api_key = "your_api_key"
+sudo nano pipeline.taofik.conf
 ```
 
-4. Lalu lakukan chmod ke file certbot.ini
+15. Masukkan script konfigurasi berikut
 
 ```
-sudo chmod 400 certbot.ini
-```
-
-5. Selanjutnya buat folder baru bernama nginx dan buat lagi didalamnya bernama conf, lalu didalam folder tersebut buat file dengan nama bebas berextensi .conf
-
-```
-mkdir nginx; cd nginx; mkdir conf; cd conf; nano taofik.conf
-```
-
-6. Simpan script ini didalamnya
-
-```
-server {
-        server_name taofik.studentdumbways.my.id;
-
-        listen 443 ssl;
-        ssl_certificate /etc/letsencrypt/live/taofik.studentdumbways.my.id/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/taofik.studentdumbways.my.id/privkey.pem;
-
-        location / {
-               proxy_pass http://103.175.221.143:3000;
-        }
+upstream jenkins {
+  keepalive 32; # keepalive connections
+  server 103.175.221.143:8080; # ip address + port server jenkins
 }
+
+# Required for Jenkins websocket agents
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  '' close;
+}
+
 server {
-        server_name api.taofik.studentdumbways.my.id;
+  listen          80;       # Listen on port 80 for IPv4 requests
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/taofik.studentdumbways.my.id/fullchain.pem; # lokasi ssl cert
+  ssl_certificate_key /etc/letsencrypt/live/taofik.studentdumbways.my.id/privkey.pem; # lokasi ssl cert
 
-        listen 443 ssl;
-        ssl_certificate /etc/letsencrypt/live/taofik.studentdumbways.my.id/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/taofik.studentdumbways.my.id/privkey.pem;
+  server_name     pipeline.taofik.studentdumbways.my.id;  # subdomain yang tadi
 
-        location / {
-               proxy_pass http://103.175.221.143:5000;
-        }
+  # this is the jenkins web root directory
+  # (mentioned in the output of "systemctl cat jenkins")
+  root            /var/run/jenkins/war/;
+
+  access_log      /var/log/nginx/jenkins.access.log;
+  error_log       /var/log/nginx/jenkins.error.log;
+
+  # pass through headers from Jenkins that Nginx considers invalid
+  ignore_invalid_headers off;
+
+  location ~ "^/static/[0-9a-fA-F]{8}\/(.*)$" {
+    # rewrite all static files into requests to the root
+    # E.g /static/12345678/css/something.css will become /css/something.css
+    rewrite "^/static/[0-9a-fA-F]{8}\/(.*)" /$1 last;
+  }
+
+  location /userContent {
+    # have nginx handle all the static requests to userContent folder
+    # note : This is the $JENKINS_HOME dir
+    root /var/lib/jenkins/;
+    if (!-f $request_filename){
+      # this file does not exist, might be a directory or a /**view** url
+      rewrite (.*) /$1 last;
+      break;
+    }
+    sendfile on;
+  }
+
+  location / {
+      sendfile off;
+      proxy_pass         http://jenkins;
+      proxy_redirect     default;
+      proxy_http_version 1.1;
+
+      # Required for Jenkins websocket agents
+      proxy_set_header   Connection        $connection_upgrade;
+      proxy_set_header   Upgrade           $http_upgrade;
+
+      proxy_set_header   Host              $http_host;
+      proxy_set_header   X-Real-IP         $remote_addr;
+      proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+      proxy_set_header   X-Forwarded-Proto $scheme;
+      proxy_max_temp_file_size 0;
+
+      #this is the maximum upload size
+      client_max_body_size       10m;
+      client_body_buffer_size    128k;
+
+      proxy_connect_timeout      90;
+      proxy_send_timeout         90;
+      proxy_read_timeout         90;
+      proxy_request_buffering    off; # Required for HTTP CLI commands
+  }
+
 }
 ```
 
-7. Selanjutnya jalankan docker compose
-
-```
-cd && docker compose up -d
-```
-
-8. Lalu Generate SSL Certificate
-
-```
-docker compose run --rm certbot certonly --dns-cloudflare
-```
-
-9. ketika diminta nama domain, Masukkan `namadomain.com, *.namadomain.com`
-
-10. Jika diminta file .ini, masukkan: `/etc/letsencrypt/renewal/renewal.conf`
-
-11. Jika selesai, lakukan reload nginx
+16. Simpan lalu reload webserver nginx
 
 ```
 docker compose exec webserver nginx -s reload
 ```
 
-12. Lalu akses menggunakan browser
+17. Selanjutnya ke jenkins -> Manage Jenkins -> System
+
+18. Pastikan di bagian Jeknins URL sudah sesuai. Lalu Apply & Save
+
+```
+https://pipeline.taofik.studentdumbways.my.id/
+```
+
+19. Selanjutnya ke Plugins -> Available Plugins -> cari SSH Agent dan Discord Notifier -> Install
+
+20. Kembali ke Manage Jenkins -> Credentials
+
+21. Lalu pilih Add Credentials
+
+  - Pada bagian Kind, pilih SSH Username with private key.
+  - Pada bagian ID, masukan id yang nantinya akan dipakai pada file Jenkinsfile.
+
+  ```
+  taofiks-appserver
+  ```
+  - Pada bagian Username, masukkan username dari server backend.
+
+  ```
+  taofiks
+  ```
+
+22. Pada bagian Privat Key, Klik Enter Directly Lalu klik Add. Masukkan privat key dari server backend
+
+23. Masuk ke github, lalu tambahkan Public key dari ssh tadi. Ke Settings -> SSH and GPG keys -> New SSH Key
+
+24. Masukkan Public keynya lalu klik Add SSH Key.
+
+25. Jika sudah, tes koneksi ke github. `ssh -T git@github.com`
+
+26. Selanjutnya buat repository baru di github bernama CICD
+
+27. Jika sudah dibuat, jalankan command berikut
+
+```
+git config --global user.email "alamat email" && git config --global user.name "username github"
+```
+
+28. Selanjutnya pergi ke folder wayshub-backend dan buat file baru dengan nama Jenkinsfile. Berikut adalah isi dari file Jenkinsfile. Silahkan edit sesuai kebutuhan
+
+```
+def secret = 'taofiks-appserver'
+def server = 'taofiks@103.175.221.143'
+def directory = '/home/taofiks/wayshub-backend'
+def branch = 'main'
+def namebuild = 'wayshub-backend:1.0'
+
+pipeline {
+    agent any
+    stages {
+        stage ('pull new code') {
+            steps {
+                sshagent([secret]) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${server} << EOF
+                            cd ${directory}
+                            git pull origin ${branch}
+                            echo "Selesai Pulling!"
+                            exit
+                        EOF
+                    """
+                }
+            }
+        }
+
+        stage ('build the code') {
+            steps {
+                sshagent([secret]) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${server} << EOF
+                            cd ${directory}
+                            docker build -t ${namebuild} .
+                            echo "Selesai Building!"
+                            exit
+                        EOF
+                    """
+                }
+            }
+        }
+
+        stage ('deploy') {
+            steps {
+                sshagent([secret]) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${server} << EOF
+                            cd ${directory}
+                            docker compose down
+                            docker compose up -d
+                            echo "Selesai Men-Deploy!"
+                            exit
+                        EOF
+                    """
+                }
+
+            }
+        }
+    }
+}
+```
+
+29. Jika sudah simpan dan jalankan command berikut, sesuaikan dengan nama branch dan repository yang barusan dibuat.
+
+```
+git remote set-url origin git@github.com:MTC0D3/CICD.git && git add .
+```
+
+```
+git commit -m "chore: Adding Jenkins and Docker" && git push origin main
+```
+
+30. Cek kembali repository tadi
+
+31. Ke Dashboard Jenkins. Klik New Item.
+
+32. Masukkan nama yang diinginkan, lalu pilih yang Pipeline -> Klik OK.
+
+```
+wayshub-backend
+```
+
+33. Ceklist pada bagian GitHub hook triger for GITScm polling
+
+34. Scroll kebawah,
+
+  - Pada bagian Definition ganti menjadi Pipeline script from SCM
+  - Pada bagian SCM ganti menjadi Git
+  - Pada bagian Repository, masukkan alamat repository tadi.
+
+  ```
+  https://github.com/MTC0D3/CICD.git
+  ```
+
+  - Pada bagian Credentials, pilih credentials yang barusan dibuat
+
+  ```
+  taofiks
+  ```
+
+35. Scroll kebawah lagi, Sesuaikan untuk branch dan Script path.
+
+```
+*/main
+```
+
+36. Jika sudah, coba untuk menjalankannya dengan klik Build Now.
+
+37. Jika sukses tanpa error, akan tampil seperti ini, jika ada error cek kembali file Jenkinsfile tadi.
+
+38. Selanjutnya Login ke docker hub dan buat repository baru. Pastikan visibility Public
+
+```
+wayshub-backend
+```
+
+39. Buat credentials baru di jenkins. 
+  - Masukkan username dan password dari akun docker
+  - Dan pada bagian ID `masukkan docker-hub-credentials`
+
+40. Jika sudah, edit kembali script Jenkinsfile tadi. Lalu tambahkan stage Test, Push ke Docker hub dan tambakan script notif ke Discord. Sesuaikan dengan Kebutuhan.
+
+```
+def secret = 'taofiks-appserver'
+def server = 'taofiks@103.175.221.143'
+def directory = '/home/taofiks/wayshub-backend'
+def branch = 'master'
+def namebuild = 'wayshub-backend:1.0'
+def dockerHubCredentials = 'docker-hub-credentials'
+def dockerHubRepo = 'mtc0d3/wayshub-backend'
+
+pipeline{
+    agent any
+    stages{
+        stage ('pull new code'){
+            steps{
+                sshagent([secret]){
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    git pull origin ${branch}
+                    echo "Selesai Pulling!"
+                    exit
+                    EOF"""
+                }
+            }
+        }
+
+        stage ('build the code'){
+            steps{
+                sshagent([secret]){
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker build -t ${namebuild} .
+                    echo "Selesai Building!"
+                    exit
+                    EOF"""
+                }
+            }
+        }
+
+        /*stage ('test the code'){
+            steps{
+                sshagent([secret]){
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                        cd ${directory}
+                        docker run -d --name testcode -p 5009:5000 ${namebuild}
+                        if wget --spider -q --server-response http://127.0.0.1:5009/ 2>&1 | grep '404 Not Found'; then
+                            echo "Webserver is up and returning 404 as expected!"
+                        else
+                            echo "Webserver is not responding with expected 404, stopping the process."
+                            docker rm -f testcode
+                            exit 1
+                        fi
+                        docker rm -f testcode
+                        echo "Selesai Testing!"
+                        exit
+                    EOF"""
+                }
+            }
+        }*/
+
+        stage ('deploy'){
+            steps {
+                sshagent([secret]){
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker compose down
+                    docker compose up -d
+                    echo "Selesai Men-Deploy!"
+                    exit
+                    EOF"""
+                }
+            }
+        }
+
+        stage('push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: dockerHubCredentials, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sshagent([secret]) {
+                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                        cd ${directory}
+                        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                        docker tag ${namebuild} ${dockerHubRepo}:latest
+                        docker push ${dockerHubRepo}:latest
+                        echo "Selesai Push ke Docker Hub!"
+                        exit
+                        EOF"""
+                    }
+                }
+            }
+        }
+
+        stage('push notif to discord') {
+            steps {
+                discordSend description: 'test desc', footer: '', image: '', link: '', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: 'Discord Notif', webhookURL: 'https://discord.com/api/webhooks/1382515352096870461/lxo6OwPf-tKKvxbPytKXQdru8kizfdkZS2c4NEUIVozqvtev5z3LhHmpn1CxPvszmH48'
+            }
+        }
+
+    }
+}
+```
+
+41. Jika sudah, Simpan filenya dan Push kembali ke github.
+
+42. Test kembali scriptnya dengan klik Build Now di jenkins.
+
+43. Selanjutnya ke github repository tadi, lalu Klik Settings
+
+44. Ke bagian Webhook -> Add webhook
+
+45. Masukkan Payload URL dengan alamat URL dari jenkins + ditambah /github-webhook. Lalu klik Add Webhook
+
+```
+https://pipeline.taofik.studentdumbways.my.id/github-webhook/
+```
+
+46. Jika sudah, coba buat perubahan pada backend dan push kembali ke github
+
+47. Lalu cek lagi di jenkins, maka proses build sudah otomatis berjalan ketika user push ke github
+
+![alt text](image.png)
