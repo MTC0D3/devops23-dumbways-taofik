@@ -165,6 +165,8 @@ ansible-playbook monitoring.yaml
 
 - Grafana
 
+![alt text](image-14.png)
+
 ---
 
 ##  Dashboard grafana menggunakan template
