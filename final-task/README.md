@@ -8,7 +8,7 @@
 
 Steps:
 
-1. Servers Provisioning: [text](<1. provisioning.md>)
+1. Servers Provisioning: [Provisioning](<1. provisioning.md>)
 2. Create Private Repository: 
 3. Servers Management: 
 4. Create Docker Private Registry: 
