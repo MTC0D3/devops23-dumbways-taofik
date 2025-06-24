@@ -1,0 +1,3 @@
+[biznet]
+appserver ansible_host=103.175.221.143 ansible_user="{{ newuser }}" ansible_ssh_port="{{SSHport}}"
+gateway ansible_host=103.127.136.1 ansible_user="{{ newuser }}" ansible_ssh_port="{{ SSHport }}"
