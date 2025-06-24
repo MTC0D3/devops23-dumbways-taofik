@@ -9,8 +9,8 @@
 Steps:
 
 1. Servers Provisioning: [Provisioning](<1. provisioning/1. provisioning.md>)
-2. Create Private Repository: [Repository](<2. repository/2. repository.md>)
-3. Servers Management: 
+2. Servers Management:
+3. Create Private Repository: [Repository](<3. repository/3. repository.md>)
 4. Create Docker Private Registry: 
 5. Create Deployment Environment: 
 6. Create CICD: 
