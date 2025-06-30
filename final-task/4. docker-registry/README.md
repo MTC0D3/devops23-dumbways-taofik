@@ -61,7 +61,7 @@ volumes:
 
 ![alt text](image-2.png)
 
-2. Jalankan docker compose
+3. Jalankan docker compose
 
 ```
 docker compose up -d
