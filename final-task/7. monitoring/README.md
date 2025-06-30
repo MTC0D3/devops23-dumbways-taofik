@@ -32,7 +32,7 @@
 
 ## Setup Monitoring
 
-1. Untuk installasi monitoring, saya menggunakan ansible. Untuk scriptnya bisa dilihat DISINI
+1. Untuk installasi monitoring, saya menggunakan ansible. Untuk scriptnya bisa dilihat [DISINI](../ansible/4_install_monitoring.yaml)
 
 ### **Adding Basic Auth**
 
