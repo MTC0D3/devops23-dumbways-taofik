@@ -28,7 +28,7 @@
 
 # Setup Webserver
 
-1. Untuk setup webserver disini saya menggunakan Ansible, Untuk Scriptnya bisa dilihat DISINI
+1. Untuk setup webserver disini saya menggunakan Ansible, Untuk Scriptnya bisa dilihat [DISINI](../ansible/5_reverse_proxy.yaml)
 
 ## Setup Automatic Renewal for Certificate
 
