@@ -34,7 +34,7 @@
 
 1. Untuk installasi monitoring, saya menggunakan ansible. Untuk scriptnya bisa dilihat [DISINI](../ansible/4_install_monitoring.yaml)
 
-### **Adding Basic Auth**
+### **Monitoring VM**
 
 1. Setelah monitoring terdeploy dengan ansible, buka dashboard grafana di browser.
 
