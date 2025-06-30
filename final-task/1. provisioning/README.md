@@ -97,7 +97,7 @@ ansible --version
 
 ![alt text](image-7.png)
 
-3. Dan untuk scriptnya bisa dilihat DISINI.
+3. Dan untuk scriptnya bisa dilihat [DISINI](https://github.com/MTC0D3/devops23-dumbways-taofik/tree/main/final-task/ansible)
 
 4. Selanjutnya, untuk menjalankan scriptnya bisa satu persatu seperti ini
 
@@ -108,5 +108,5 @@ ansible-playbook 3_setup_ufw.yaml;
 ansible-playbook 4_install_mon.yaml;
 ansible-playbook 5_reverse_proxy.yaml;
 ansible-playbook 6_clone_repo.yaml;
-ansible-playbook 8_install_jenkins.yaml;
+ansible-playbook 7_install_jenkins.yaml;
 ```
