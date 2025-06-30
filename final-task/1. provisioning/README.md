@@ -104,9 +104,9 @@ ansible --version
 ```
 ansible-playbook 1_install_docker.yaml;
 ansible-playbook 2_create_user.yaml;
-ansible-playbook 3_setup_ufw.yaml;
-ansible-playbook 4_install_mon.yaml;
+ansible-playbook 3_setup_ufw_port.yaml;
+ansible-playbook 4_install_monitoring.yaml;
 ansible-playbook 5_reverse_proxy.yaml;
-ansible-playbook 6_clone_repo.yaml;
+ansible-playbook 6_clone_repository.yaml;
 ansible-playbook 7_install_jenkins.yaml;
 ```
