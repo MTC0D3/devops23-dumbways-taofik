@@ -1,5 +1,9 @@
 - hosts: all
   become: true
+  vars:
+    ansible_user: "{{ newuser }}"
+    ansible_ssh_port: "{{SSHport}}"
+
   tasks:
 
   - name: "Change port SSH"
@@ -18,26 +22,6 @@
         - "9100" # NodeEx
         - "8181" # Cadvisor
 
-  - name: "UFW - Allow ports for worker"
-    community.general.ufw:
-      rule: allow
-      port: "{{item}}"
-    loop:
-        - "6444" # k3s-agent
-        - "8472" # k3s
-        - "51820" # k3s
-        - "30432" # pgsql
-        - "30777" # pgadmin
-        - "30300" # frontend k3s
-        - "30500" # backend k3s
-        - "8080" # registry-ui
-        - "7000" # registry
-        - "3000" # docker test fe
-        - "5000" # docker test be
-        - "3010" # docker test fe prod
-        - "5050" # docker test be prod
-    when: inventory_hostname == 'worker'
-
   - name: "UFW - Allow Other ports for appserver"
     community.general.ufw:
       rule: allow
@@ -51,24 +35,8 @@
         - "9090" # Prometheus
         - "3001" # FE Prod
         - "5001" # BE Prod
-    when: inventory_hostname == 'appserver'
-
-  - name: "UFW - Allow ports for master"
-    community.general.ufw:
-      rule: allow
-      port: "{{item}}"
-    loop:
-        - "6443" # k3s
-        - "8472" # k3s
-        - "51820" # k3s
-        - "5000" # backend
-        - "3000" # frontend
-        - "30432" # pgsql
-        - "30777" # pgadmin
-        - "30300" # frontend k3s
-        - "30500" # backend k3s
         - "5432" # PSQL
-    when: inventory_hostname == 'master'
+    when: inventory_hostname == 'appserver'
 
   - name: "UFW - Allow Other ports for gateway"
     community.general.ufw:
@@ -83,8 +51,8 @@
   - name: "UFW - Enable and deny by default"
     community.general.ufw:
       state: enabled
-      default: deny        
-  
+      default: deny
+
   - name: "UFW - restarted"
     ansible.builtin.systemd:
       name: ufw
@@ -94,4 +62,3 @@
     ansible.builtin.systemd_service:
       name: sshd
       state: reloaded
-  
