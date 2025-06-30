@@ -36,7 +36,7 @@ ssh -T git@github.com
 
 ![alt text](image.png)
 
-2. Untuk installasi Jenkins saya menggunakan Ansible, Scriptnya bisa dilihat [DISINI]https://github.com/MTC0D3/devops23-dumbways-taofik/blob/main/final-task/ansible/7_install_jenkins.yaml
+2. Untuk installasi Jenkins saya menggunakan Ansible, Scriptnya bisa dilihat [DISINI](../ansible/7_install_jenkins.yaml)
 
 3. Jika installasi Jenkins sudah berhasil, nantinya akan ada ```Initial Admin Password``` untuk melanjutkan proses installasi jenkins di web.
 
