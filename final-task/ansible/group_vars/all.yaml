@@ -5,7 +5,7 @@ SSHport: "1234"
 # Create New user
 newuser: "finaltask-taofik"
 home_dir: "/home/{{ newuser }}"
-public_key: "/home/{{ username }}/.ssh/id_rsa.pub" # location of your pub_key in your local machine
+public_key: "/home/{{username}}/.ssh/id_rsa.pub" # location of your pub_key in your local machine
 enc_pass: "$6$zPj2MDxDKoYtjKa2$HOEIwJNblz8uoAy.8VouCtUEV5DKTiZNp90JiDyOqiy1rHZxs5k8NXFDuCi94qrJ5DIswUO6mguFNOg4J7PAU." # 1
 
 # Monitoring
@@ -14,11 +14,12 @@ scrape_interval: "5s"
 targets:
   - "103.175.221.143:9100"
   - "103.127.136.1:9100"
+  - "103.175.221.143:8181"
+  - "103.127.136.1:8181"
 grafana_dir: "{{ home_dir }}/grafana"
 prometheus_config: "{{ grafana_dir }}/prometheus.yml"
 grafana_datasources: "{{ grafana_dir }}/provisioning/datasources"
 grafana_data: "{{ grafana_dir }}/data"
-
 
 # Reverse Proxy
 nginx_dir: "{{ home_dir }}/nginx"
@@ -29,9 +30,13 @@ subdomains:
   - name: "exporter."
     backend: "103.175.221.143:9100"
   - name: "monitoring."
-    backend: "103.175.221.143:3005"
+    backend: "103.175.221.143:8080"
   - name: "prom."
     backend: "103.175.221.143:9090"
+  - name: "registry."
+    backend: "103.175.221.143:7000"
+  - name: "hub."
+    backend: "103.175.221.143:8000"
   - name: "staging."
     backend: "103.175.221.143:3000"
   - name: "api-staging."
@@ -40,4 +45,3 @@ subdomains:
     backend: "54.227.16.222:5050"
   - name: "pipeline."
     backend: "103.175.221.143:7070"
-

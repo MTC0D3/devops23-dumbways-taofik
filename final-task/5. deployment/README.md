@@ -53,6 +53,8 @@ services:
 2. Test Connetion to PSQL remotely:
 
 ```
+sudo apt update
+sudo apt install postgresql-client
 psql -h 103.175.221.143 -p 5432 -U taofiks -d dumbmerch
 ```
 
